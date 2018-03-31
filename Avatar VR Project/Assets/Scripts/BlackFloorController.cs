@@ -14,12 +14,13 @@ public class BlackFloorController : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag=="Falling_Rock")
+        if (other.tag=="Falling_Rock" || other.tag=="Rotating_Rock")
         {
-            Destroy(other.gameObject);
+            other.gameObject.active = false;
+            //Destroy(other.gameObject);
         }
     }
 }
