@@ -22,9 +22,6 @@ public class Switch_Floor : MonoBehaviour {
     IEnumerator FallingFloorTimer()
     {
         yield return new WaitForSeconds(sceneStartTimer);
-        //yield return new WaitForSeconds(Random.value*timer);
-        //Instantiate(fallenForm, new Vector3 ((transform.position.x)-150, (transform.position.y)+10, transform.position.z), transform.rotation);
         this.gameObject.active = false;
-        //Destroy(this.gameObject);
     }
 }

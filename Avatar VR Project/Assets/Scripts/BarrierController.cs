@@ -5,8 +5,9 @@ using UnityEngine;
 public class BarrierController : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        gameObject.active = true;
 	}
 	
 	// Update is called once per frame
@@ -15,6 +16,10 @@ public class BarrierController : MonoBehaviour {
 		
 	}
 
+    public void SetActive(bool act)
+    {
+        gameObject.active = act;
+    }
     private void OnTriggerEnter(Collider other)
     {
 
