@@ -11,15 +11,21 @@ public class Init_Rocks : MonoBehaviour {
 	public int numRocks = 20;
 	private int rock_w = 30, rock_d = 30;
 	private Dictionary<Vector2Int, GameObject> rocks = new Dictionary<Vector2Int, GameObject>();
+    public GameObject SecondFloor;
+    public ParticleSystem endTranstion;
+    public bool PlayEndGame;
 
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(InitRockTimer());
+        //SecondFloor = GameObject.Find("ReMadeFloor");
+        GameObject effect = GameObject.FindGameObjectWithTag("EndEffect");
+        endTranstion = effect.GetComponent<ParticleSystem>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (checkWinCondition ()) {
+		if (checkWinCondition () || PlayEndGame) {
 			onGameWin ();
 		}
 	}
@@ -75,7 +81,18 @@ public class Init_Rocks : MonoBehaviour {
 	}
 
 	// Use this handler to do whatever actions need to be taken when game is won
-	public void onGameWin() {
+	public void onGameWin()
+    {
+
+        StartCoroutine(EndTheGame());
 		// TODO Brianna
 	}
+
+    IEnumerator EndTheGame()
+    {
+        endTranstion.Play();
+        yield return new WaitForSeconds(5);
+        SecondFloor.SetActive(true);
+        gameObject.SetActive(false);
+    }
 }
