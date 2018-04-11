@@ -57,7 +57,11 @@ public class RoomWorldController : MonoBehaviour
 
     void OnMouseDown()
     {
-        isSelected = true;
+        if (gameObject.tag == "EarthWorld")
+        {
+            isSelected = true;
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
