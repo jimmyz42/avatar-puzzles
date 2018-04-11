@@ -7,6 +7,10 @@ TagManager:
   - Movable_Rock
   - Falling_Rock
   - BlackFloor
+  - EarthWorld
+  - FireWorld
+  - AirWorld
+  - WaterWorld
   layers:
   - Default
   - TransparentFX
