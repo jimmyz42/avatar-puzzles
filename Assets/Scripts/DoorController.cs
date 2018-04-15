@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class DoorController : MonoBehaviour {
 
     public Transform target;
+    public ParticleSystem exit;
     public float speed;
-    public float delay;
+    public float doorDelay;
+    public float exitDelay;
     public bool ending;
 	// Use this for initialization
 	void Start ()
@@ -37,7 +39,7 @@ public class DoorController : MonoBehaviour {
 
     IEnumerator EndingtheGame()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(doorDelay);
         MovingDoor();
     }
 
@@ -45,8 +47,15 @@ public class DoorController : MonoBehaviour {
     {
         if (other.tag=="Player")
         {
-            SceneManager.LoadScene("AstralRoom");
+            StartCoroutine(ExitingRoom());
         }
+    }
+
+    IEnumerator ExitingRoom()
+    {
+        exit.Play();
+        yield return new WaitForSeconds(exitDelay);
+        SceneManager.LoadScene("AstralRoom");
     }
 
 }
