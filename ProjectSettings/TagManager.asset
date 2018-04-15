@@ -13,6 +13,7 @@ TagManager:
   - EndEffect
   - EndFloor
   - DiffFloor
+  - Second_Floor
   layers:
   - Default
   - TransparentFX
