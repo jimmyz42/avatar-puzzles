@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Earth_Room.unity
-    guid: 19ec0835855fd564bb969f835e5bdb97
-  - enabled: 1
     path: Assets/Scenes/AstralRoom.unity
     guid: 13f84a717da2fda43ba9c53dc777e715
+  - enabled: 1
+    path: Assets/Scenes/Earth_Room.unity
+    guid: 19ec0835855fd564bb969f835e5bdb97

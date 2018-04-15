@@ -7,10 +7,13 @@ TagManager:
   - Movable_Rock
   - Falling_Rock
   - BlackFloor
+  - Floor
+  - Rotating_Rock
   - EarthWorld
-  - FireWorld
-  - AirWorld
-  - WaterWorld
+  - EndEffect
+  - EndFloor
+  - DiffFloor
+  - Second_Floor
   layers:
   - Default
   - TransparentFX

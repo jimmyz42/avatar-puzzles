@@ -74,7 +74,7 @@ public class RoomWorldController : MonoBehaviour
         }
     }
 
-    IEnumerator EnteringTheWorld()
+    public IEnumerator EnteringTheWorld()
     {
         yield return new WaitForSeconds(timer);
         SceneManager.LoadScene(connectedWorld);
