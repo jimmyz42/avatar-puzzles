@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class ReFlooringScript : MonoBehaviour {
 
-    public Transform endPos;
+    public GameObject target;
+    public Vector3 endPos;
     public bool endGame;
     public float speed;
-	// Use this for initialization
-	void Start ()
+    public GameObject Goal;
+    public bool startMove;
+    // Use this for initialization
+    void Start ()
     {
         //endGame = false;
-        gameObject.SetActive(false);
+        target = GameObject.FindGameObjectWithTag("StartFloor");
+        endPos = target.transform.position;
+        Goal = GameObject.FindGameObjectWithTag("Finish");
+        //gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -19,13 +25,23 @@ public class ReFlooringScript : MonoBehaviour {
     {
 		if (gameObject.active)
         {
-            //gameObject.SetActive(true);
             MovingFloorUp();
+        }
+        if (transform.position==endPos)
+        {
+            DoorController d = Goal.GetComponent<DoorController>();
+            d.SetEnding(true);
         }
 	}
 
     void MovingFloorUp()
     {
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, endPos.position, speed * Time.deltaTime);
+        gameObject.transform.position =Vector3.MoveTowards(gameObject.transform.position, new Vector3(transform.position.x, endPos.y, transform.position.z), speed * Time.deltaTime);
     }
+
+    public void StartMoving(bool canMove)
+    {
+        startMove = canMove;
+    }
+
 }

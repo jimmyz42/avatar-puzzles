@@ -14,6 +14,7 @@ TagManager:
   - EndFloor
   - DiffFloor
   - Second_Floor
+  - StartFloor
   layers:
   - Default
   - TransparentFX

@@ -13,15 +13,12 @@ public class ChangingScene : MonoBehaviour {
 	void Start ()
     {
         Barrier = GameObject.Find("Barrier");
-        Debug.Log(GameObject.FindGameObjectsWithTag("Second_Floor"));
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         Floors = GameObject.FindGameObjectsWithTag("Second_Floor");
-        Debug.Log("here");
-        Debug.Log(Floors);
         if (Floors.Length <1)
         {
             Switch.SetActive(true);
@@ -33,7 +30,7 @@ public class ChangingScene : MonoBehaviour {
     IEnumerator TurningOffBarrier()
     {
         yield return new WaitForSeconds(barrierTimer);
-        Barrier.active = false;
+        Barrier.SetActive(false);
         this.enabled = false;
     }
 }
