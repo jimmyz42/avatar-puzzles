@@ -11,14 +11,19 @@ public class Init_Rocks : MonoBehaviour {
 	public int numRocks = 20;
 	private int rock_w = 30, rock_d = 30;
 	private Dictionary<Vector2Int, GameObject> rocks = new Dictionary<Vector2Int, GameObject>();
+
     public GameObject SecondFloor;
+    public ReFlooringScript movingFloor;
     public ParticleSystem endTranstion;
     public bool PlayEndGame;
+
 
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(InitRockTimer());
-        //SecondFloor = GameObject.Find("ReMadeFloor");
+        //SecondFloor = GameObject.FindGameObjectWithTag("DiffFloor");
+        //SecondFloor.SetActive(false);
+        //movingFloor = SecondFloor.GetComponent<ReFlooringScript>();
         GameObject effect = GameObject.FindGameObjectWithTag("EndEffect");
         endTranstion = effect.GetComponent<ParticleSystem>();
 	}
@@ -92,7 +97,7 @@ public class Init_Rocks : MonoBehaviour {
     {
         endTranstion.Play();
         yield return new WaitForSeconds(5);
-        SecondFloor.SetActive(true);
+        Instantiate(SecondFloor);
         gameObject.SetActive(false);
     }
 }
