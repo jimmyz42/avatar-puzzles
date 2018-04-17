@@ -15,6 +15,7 @@ TagManager:
   - DiffFloor
   - Second_Floor
   - StartFloor
+  - Leaves
   layers:
   - Default
   - TransparentFX

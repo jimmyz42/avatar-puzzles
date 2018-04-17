@@ -16,6 +16,8 @@ public class LeafController : MonoBehaviour {
     void Start ()
     {
         //posOffset = transform.position;
+        frequency = Random.Range(.4f, .7f);
+        SetRotation();
         
 	}
 	
@@ -37,5 +39,17 @@ public class LeafController : MonoBehaviour {
         tempPos = transform.position;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * (Random.value*amplitude);
         transform.position = tempPos;
+    }
+
+    void SetRotation()
+    {
+        var euler = transform.eulerAngles;
+        euler.y = Random.Range(0.0f, 360.0f);
+        transform.eulerAngles = euler;
+    }
+
+    public void SetTarget(Transform targetFromParent)
+    {
+        target = targetFromParent;
     }
 }
