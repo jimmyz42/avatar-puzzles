@@ -34,11 +34,6 @@ public class LeafController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(rb.velocity);
-        //if (rb.velocity==Vector3.zero)
-        //{
-          //  rb.drag = 0;
-        //}
         if (doingTwirls)
         {
             Twirl();
@@ -95,19 +90,5 @@ public class LeafController : MonoBehaviour {
         doingTwirls = !t;
         Debug.Log("leaf");
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag=="LeafFloor" && !doingTwirls)
-        {
-            rb.drag = 0;
-            rb.velocity = Vector3.zero;
-        }
-    }
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider.tag == "LeafFloor" && !doingTwirls)
-        {
-            rb.drag = 0;
-        }
-    }
+
 }
