@@ -11,6 +11,9 @@ public class LeafController : MonoBehaviour {
     public float amplitude = 0.5f;
     public float frequency = 1f;
 
+    public Rigidbody rb;
+    public Collider col;
+
     public bool doingTwirls;
     Vector3 posOffset = new Vector3();
     Vector3 tempPos = new Vector3();
@@ -22,6 +25,8 @@ public class LeafController : MonoBehaviour {
         doingTwirls = true;
         frequency = Random.Range(.4f, .7f);
         SetRotation();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
         //StartCoroutine(FallLeaf());
         
 	}
@@ -29,11 +34,23 @@ public class LeafController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.Log(rb.velocity);
+        //if (rb.velocity==Vector3.zero)
+        //{
+          //  rb.drag = 0;
+        //}
         if (doingTwirls)
         {
             Twirl();
             Bounce();
         }
+        else
+        {
+
+            rb.drag = 0;
+            col.isTrigger = false;
+        }
+
         
 	}
 
@@ -77,5 +94,20 @@ public class LeafController : MonoBehaviour {
     {
         doingTwirls = !t;
         Debug.Log("leaf");
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag=="LeafFloor" && !doingTwirls)
+        {
+            rb.drag = 0;
+            rb.velocity = Vector3.zero;
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.tag == "LeafFloor" && !doingTwirls)
+        {
+            rb.drag = 0;
+        }
     }
 }

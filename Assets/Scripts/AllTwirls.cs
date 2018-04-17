@@ -6,9 +6,13 @@ public class AllTwirls : MonoBehaviour {
 
     public float delay;
     public SettingCenter[] leaves;
+    public GameObject gameleaf;
+
+    public Vector3 oriPos;
 	// Use this for initialization
 	void Start ()
     {
+
 
     }
 
@@ -17,6 +21,9 @@ public class AllTwirls : MonoBehaviour {
     {
 
     }
+
+
+
 
 
 }

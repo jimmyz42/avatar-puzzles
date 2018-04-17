@@ -9,6 +9,8 @@ public class LevelConroller : MonoBehaviour {
     public float wallSpeed;
     public float wallDelay;
     public float leavesDrops;
+    public float leavesFallDelay;
+    public SettingCenter[] Twirl;
 
     private WallController walls;
     private LeavesController leaves;
@@ -18,6 +20,7 @@ public class LevelConroller : MonoBehaviour {
 	void Start ()
     {
         walls = Walls.GetComponent<WallController>();
+        Walls.SetActive(false);
         leaves = Leaves.GetComponent<LeavesController>();
         //leaves.delay = leavesDrops;
 	}
@@ -31,8 +34,9 @@ public class LevelConroller : MonoBehaviour {
     IEnumerator GoingToGame()
     {
         yield return new WaitForSeconds(wallDelay);
+        Walls.SetActive(true);
         walls.SetParams(true, wallSpeed);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(leavesFallDelay);
         leaves.SetParams(true, leavesDrops);
 
     }

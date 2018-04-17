@@ -27,7 +27,7 @@ public class LeavesController : MonoBehaviour {
 
     void MoveDown()
     {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, endPos, transform.position.z), speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, endPos, transform.position.z), speed * Time.deltaTime);
     }
 
     public void SetParams(bool d, float s)

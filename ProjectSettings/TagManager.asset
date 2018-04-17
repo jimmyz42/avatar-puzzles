@@ -17,6 +17,9 @@ TagManager:
   - StartFloor
   - Leaves
   - TwirlAnchor
+  - GameLeaf
+  - TwirlLeaves
+  - LeafFloor
   layers:
   - Default
   - TransparentFX
