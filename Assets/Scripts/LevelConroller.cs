@@ -8,6 +8,7 @@ public class LevelConroller : MonoBehaviour {
     public GameObject Leaves;
     public float wallSpeed;
     public float wallDelay;
+    public float leavesDrops;
 
     private WallController walls;
     private LeavesController leaves;
@@ -18,6 +19,7 @@ public class LevelConroller : MonoBehaviour {
     {
         walls = Walls.GetComponent<WallController>();
         leaves = Leaves.GetComponent<LeavesController>();
+        //leaves.delay = leavesDrops;
 	}
 	
 	// Update is called once per frame
@@ -30,9 +32,8 @@ public class LevelConroller : MonoBehaviour {
     {
         yield return new WaitForSeconds(wallDelay);
         walls.SetParams(true, wallSpeed);
-        Debug.Log("changed the wall");
-        leaves.DroptheLeaves(true);
-        Debug.Log("dropped the leaves");
+        yield return new WaitForSeconds(8f);
+        leaves.SetParams(true, leavesDrops);
 
     }
 }

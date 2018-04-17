@@ -16,6 +16,7 @@ TagManager:
   - Second_Floor
   - StartFloor
   - Leaves
+  - TwirlAnchor
   layers:
   - Default
   - TransparentFX
