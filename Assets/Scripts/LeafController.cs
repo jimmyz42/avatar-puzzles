@@ -9,6 +9,8 @@ public class LeafController : MonoBehaviour {
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.5f;
     public float frequency = 1f;
+
+    private bool doingTwirls;
     Vector3 posOffset = new Vector3();
     Vector3 tempPos = new Vector3();
     
@@ -16,6 +18,7 @@ public class LeafController : MonoBehaviour {
     void Start ()
     {
         //posOffset = transform.position;
+        doingTwirls = true;
         frequency = Random.Range(.4f, .7f);
         SetRotation();
         
@@ -24,8 +27,12 @@ public class LeafController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Twirl();
-        Bounce();
+        if (doingTwirls)
+        {
+            Twirl();
+            Bounce();
+        }
+        
 	}
 
     public void Twirl()
@@ -51,5 +58,11 @@ public class LeafController : MonoBehaviour {
     public void SetTarget(Transform targetFromParent)
     {
         target = targetFromParent;
+    }
+
+    public void TwirlsOff(bool t)
+    {
+        doingTwirls = !t;
+        Debug.Log("leaf");
     }
 }

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23595424310863614}
   m_Layer: 0
   m_Name: TwrielAchorApperance
-  m_TagString: Untagged
+  m_TagString: TwirlAnchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,6 +353,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4517286552932756}
+  - component: {fileID: 114987033351547758}
   m_Layer: 0
   m_Name: TurningLeaf
   m_TagString: Untagged
@@ -559,7 +560,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1903293759438634}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.5, y: 2.2, z: 13.2}
+  m_LocalPosition: {x: -34.06, y: 1.25, z: 12.990001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4631962099325358}
@@ -1365,7 +1366,7 @@ Rigidbody:
   m_GameObject: {fileID: 1171486092540708}
   serializedVersion: 2
   m_Mass: 0.1
-  m_Drag: 1000000
+  m_Drag: 100
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1395,7 +1396,7 @@ Rigidbody:
   m_GameObject: {fileID: 1605159621550042}
   serializedVersion: 2
   m_Mass: 0.1
-  m_Drag: 1000000
+  m_Drag: 100
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1440,7 +1441,7 @@ Rigidbody:
   m_GameObject: {fileID: 1183044516291798}
   serializedVersion: 2
   m_Mass: 0.1
-  m_Drag: 1000000
+  m_Drag: 100
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1575,7 +1576,7 @@ Rigidbody:
   m_GameObject: {fileID: 1489328377458442}
   serializedVersion: 2
   m_Mass: 0.1
-  m_Drag: 1000000
+  m_Drag: 100
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2087,3 +2088,14 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.2
   frequency: 0.4
+--- !u!114 &114987033351547758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903293759438634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d75f4b83d6a12479d2adb6bf6e98f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
