@@ -6,19 +6,24 @@ public class SettingCenter : MonoBehaviour {
 
     public GameObject target;
     public LeafController[] leaves;
+    public float falling;
     // Use this for initialization
 	void Start ()
     {
         leaves = gameObject.GetComponentsInChildren<LeafController>();
-        foreach (Transform leaf in transform )
+        foreach (LeafController leaf in leaves )
         {
-            var s=leaf.gameObject.GetComponent<LeafController>();
-            s.SetTarget(target.transform);
+            //var s=leaf.gameObject.GetComponent<LeafController>();
+            leaf.SetTarget(target.transform);
+            //leaf.SetDelay(falling);
         }
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
+
+
 }
