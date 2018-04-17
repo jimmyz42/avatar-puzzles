@@ -20,6 +20,7 @@ TagManager:
   - GameLeaf
   - TwirlLeaves
   - LeafFloor
+  - Mirror
   layers:
   - Default
   - TransparentFX
