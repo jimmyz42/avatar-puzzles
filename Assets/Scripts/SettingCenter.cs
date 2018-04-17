@@ -22,8 +22,19 @@ public class SettingCenter : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
+        StartCoroutine(Fall());
 	}
+
+    IEnumerator Fall()
+    {
+        yield return new WaitForSeconds(falling);
+        foreach (LeafController leaf in leaves)
+        {
+            //var s=leaf.gameObject.GetComponent<LeafController>();
+            leaf.doingTwirls = false;
+            //leaf.SetDelay(falling);
+        }
+    }
 
 
 }
