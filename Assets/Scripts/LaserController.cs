@@ -6,20 +6,13 @@ public class LaserController : MonoBehaviour {
 
     public LineRenderer line;
     public Transform startPos;
-    //public Vector3 ori;
-    //public Vector3 moved;
     public bool laserOn;
-	// Use this for initialization
 	void Start ()
     {
         line = gameObject.GetComponent<LineRenderer>();
-        //startPos = gameObject.GetComponentInParent<Transform>();
         line.enabled = false;
-        //ori = transform.position;
-        //transform.position = startPos.position;
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
         if (laserOn)
@@ -42,7 +35,7 @@ public class LaserController : MonoBehaviour {
 
            if (Physics.Raycast(ray, out hit, 1000))
             {
-               /* if (hit.collider != null)
+               /* if (hit.collider.name=="MirrorShell")
                 {
                 Debug.Log("hit something");
                 Debug.Log(hit.transform.name);
@@ -54,9 +47,7 @@ public class LaserController : MonoBehaviour {
                 //Debug.DrawLine(ray.origin, hit.point,Color.cyan);
             }
             //else
-            //{*/
             line.SetPosition(1, ray.GetPoint(10000));
-            //}
             
 
             yield return null;
