@@ -25,7 +25,6 @@ public class Mirror : MonoBehaviour {
     }
     private void OnBecameInvisible()
     {
-        Debug.Log("not here");
     }
 
 }
