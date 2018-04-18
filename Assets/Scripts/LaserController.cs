@@ -35,19 +35,16 @@ public class LaserController : MonoBehaviour {
 
            if (Physics.Raycast(ray, out hit, 1000))
             {
-               /* if (hit.collider.name=="MirrorShell")
-                {
-                Debug.Log("hit something");
-                Debug.Log(hit.transform.name);
-                Vector3 newPoint = hit.point - transform.forward;
-                line.SetPosition(1, newPoint);
+                /* if (hit.collider.name=="Mirror")
+                 {
 
-                }*/
+                 }*/
                 //Debug.Log(hit.transform.name);
                 //Debug.DrawLine(ray.origin, hit.point,Color.cyan);
+                line.SetPosition(1, hit.point);
             }
-            //else
-            line.SetPosition(1, ray.GetPoint(10000));
+            else
+                line.SetPosition(1, ray.GetPoint(10000));
             
 
             yield return null;

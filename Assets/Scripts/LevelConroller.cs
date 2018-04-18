@@ -6,17 +6,17 @@ public class LevelConroller : MonoBehaviour {
 
     public GameObject Walls;
     public GameObject Leaves;
-    public GameObject LaserStart;
+
     public float wallSpeed;
     public float wallDelay;
     public float leavesDrops;
     public float leavesFallDelay;
     public float gameStartDelay;
-    public SettingCenter[] Twirl;
+
 
     private WallController walls;
     private LeavesController leaves;
-    private LaserController laser;
+
     
 
 	// Use this for initialization
@@ -25,7 +25,7 @@ public class LevelConroller : MonoBehaviour {
         walls = Walls.GetComponent<WallController>();
         Walls.SetActive(false);
         leaves = Leaves.GetComponent<LeavesController>();
-        laser = LaserStart.GetComponent<LaserController>();
+
 
         //leaves.delay = leavesDrops;
 	}
