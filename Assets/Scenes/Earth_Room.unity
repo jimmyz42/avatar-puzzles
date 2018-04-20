@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 762f22ba43541df4e95e0e7126e8d96c, type: 3}
   m_Sun: {fileID: 10066782}
-  m_IndirectSpecularColor: {r: 0.18827492, g: 0.19114044, b: 0.19109991, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -118,6 +118,11 @@ Light:
   m_PrefabParentObject: {fileID: 108879266870107526, guid: fa78c6b0758b5094f92baa52d491d6e5,
     type: 2}
   m_PrefabInternal: {fileID: 1174647269}
+--- !u!1 &38038199 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1765759800470778, guid: 3d94d2efc7b70754ea15344190f4df4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1404185219}
 --- !u!1001 &56188795
 Prefab:
   m_ObjectHideFlags: 0
@@ -292,6 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1464762544}
+  exitSmoke: {fileID: 38038199}
   exit: {fileID: 1404185221}
   speed: 30
   doorDelay: 5
