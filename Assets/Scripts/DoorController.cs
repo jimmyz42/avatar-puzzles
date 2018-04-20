@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DoorController : MonoBehaviour {
 
     public Transform target;
+    public GameObject exitSmoke;
     public ParticleSystem exit;
     public float speed;
     public float doorDelay;
@@ -14,7 +15,7 @@ public class DoorController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
+        exitSmoke.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -53,6 +54,7 @@ public class DoorController : MonoBehaviour {
 
     IEnumerator ExitingRoom()
     {
+        exitSmoke.SetActive(true);
         exit.Play();
         yield return new WaitForSeconds(exitDelay);
         SceneManager.LoadScene("AstralRoom");

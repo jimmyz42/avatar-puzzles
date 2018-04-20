@@ -21,6 +21,8 @@ TagManager:
   - TwirlLeaves
   - LeafFloor
   - Mirror
+  - EarthGalaxy
+  - Explosion
   layers:
   - Default
   - TransparentFX
