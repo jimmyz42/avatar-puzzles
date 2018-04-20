@@ -10,7 +10,7 @@ public class GalaxyScript : MonoBehaviour {
 
 	void Start ()
     {
-        delay = 3f;
+        delay = 1f;
         StartCoroutine(DeleteExplosion());
 	}
 	
