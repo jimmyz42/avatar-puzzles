@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 0}
   startPos: {fileID: 4019652225285070}
-  laserOn: 0
+  laserOn: 1
 --- !u!120 &120143152174512756
 LineRenderer:
   m_ObjectHideFlags: 1

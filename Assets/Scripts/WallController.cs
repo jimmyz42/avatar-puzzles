@@ -8,15 +8,15 @@ public class WallController : MonoBehaviour {
     public float speed;
     public float endPos;
     public float delay;
-    public GameObject LaserStart;
-    public GameObject RealLaser;
-    public LaserController laser;
+//    public GameObject LaserStart;
+//    public GameObject RealLaser;
+//    public LaserController laser;
     //public Vector3 startPos;
     // Use this for initialization
     void Start ()
     {
-        laser = RealLaser.GetComponent<LaserController>();
-        LaserStart.SetActive(false);
+//        laser = RealLaser.GetComponent<LaserController>();
+//        LaserStart.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -48,7 +48,7 @@ public class WallController : MonoBehaviour {
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(delay);
-        LaserStart.SetActive(true);
-        laser.TurnLaserOn(true);
+//        LaserStart.SetActive(true);
+//        laser.TurnLaserOn(true);
     }
 }
