@@ -177,5 +177,13 @@ public class Init_Mirrors : MonoBehaviour {
 //		}
 		line.positionCount = pts.Count;
 		line.SetPositions (pts.ToArray ());
+
+		if (curPos.x == laserEndX && curPos.y == rows && curPos.z == 2) {
+			onGameWin ();
+		}
+	}
+
+	public void onGameWin() {
+		// TODO Brianna, make the doors open, or the walls sink, or something
 	}
 }
