@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4349647402002028}
   - component: {fileID: 114907184691396476}
   - component: {fileID: 65698191052416490}
+  - component: {fileID: 54491123650835976}
   m_Layer: 0
   m_Name: GameMirror
   m_TagString: Untagged
@@ -188,6 +189,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600527830987938}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54491123650835976
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152045688753410}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &64119950622913762
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -196,7 +212,7 @@ MeshCollider:
   m_GameObject: {fileID: 1204885668258214}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -210,7 +226,7 @@ BoxCollider:
   m_GameObject: {fileID: 1600527830987938}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

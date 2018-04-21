@@ -6543,7 +6543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd58790666242ebb0f30e25e23261d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  mirrorDelay: 5
+  laserDelay: 10
   mirrorTemplate: {fileID: 1152045688753410, guid: 20c320aef89b2a745a241c741a7839c3,
     type: 2}
   laserTemplate: {fileID: 1129658183089298, guid: f86a264d99cdc544a9f2f1dee96c4a20,
@@ -6552,6 +6553,7 @@ MonoBehaviour:
   cols: 10
   numMirrors: 20
   solutionMirrors: 10
+  laserHeight: 3
 --- !u!4 &1477816565
 Transform:
   m_ObjectHideFlags: 0
@@ -8366,9 +8368,6 @@ MonoBehaviour:
   speed: 10
   endPos: -1
   delay: 0
-  LaserStart: {fileID: 1129658183089298, guid: f86a264d99cdc544a9f2f1dee96c4a20, type: 2}
-  RealLaser: {fileID: 1560532464924676, guid: f86a264d99cdc544a9f2f1dee96c4a20, type: 2}
-  laser: {fileID: 0}
 --- !u!4 &1986237466 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4989591685379206, guid: 8e6a1f34187ab5c4c84012d323625283,

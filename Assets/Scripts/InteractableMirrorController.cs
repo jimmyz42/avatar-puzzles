@@ -18,14 +18,15 @@ public class InteractableMirrorController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		dir = Random.Range (0, mirror_dirs);
-		gameObject.transform.Rotate(new Vector3(0, dir * 360f / mirror_dirs, 0));
+		// Unity rotation is CW, not CCW, so negate
+		gameObject.transform.Rotate(new Vector3(0, -dir * 360f / mirror_dirs, 0));
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.anyKey) {
-			Debug.Log ("key pressed");
-			Debug.Log (Input.GetKey (KeyCode.UpArrow));
+//			Debug.Log ("key pressed");
+//			Debug.Log (Input.GetKey (KeyCode.UpArrow));
 			if (Input.GetKey (KeyCode.UpArrow))
 				spinMirror (true);
 			if (Input.GetKey (KeyCode.DownArrow))
@@ -37,27 +38,27 @@ public class InteractableMirrorController : MonoBehaviour {
 		}
 		if (gameObject.transform.position.y < 0) {
 			float newY = Mathf.Min (0f, gameObject.transform.position.y + riseSpeed * Time.deltaTime);
-			Debug.Log (newY);
+//			Debug.Log (newY);
 			Vector3 target = gameObject.transform.position;
 			target.y = newY;
 			gameObject.transform.position = target;
 		}
-		Debug.Log (angleToSpin);
+//		Debug.Log (angleToSpin);
 		if (angleToSpin != 0) {
 			float angle;
 			if (angleToSpin > 0) {
 				angle = Mathf.Min (angleToSpin, realSpinSpeed * Time.deltaTime);
-				angleToSpin -= angle;
 			} else {
 				angle = Mathf.Max (angleToSpin, -realSpinSpeed * Time.deltaTime);
-				angleToSpin += angle;
 			}
-			gameObject.transform.Rotate (new Vector3 (0, angle, 0));
+			angleToSpin -= angle;
+			// Unity rotation is CW, not CCW, so negate
+			gameObject.transform.Rotate (new Vector3 (0, -angle, 0));
 		}
 	}
 
 	void OnMouseDown() {
-		Debug.Log ("mouse clicked");
+//		Debug.Log ("mirror mouse clicked");
 		if (selectedMirror != gameObject) {
 			unselectMirror (); // unselect that mirror
 			selectMirror (); // select this mirror

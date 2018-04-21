@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Init_Mirrors : MonoBehaviour {
 
-	public float delay;
+	public float mirrorDelay;
+	public float laserDelay;
 	public GameObject mirrorTemplate;
 	public GameObject laserTemplate;
 	public int rows = 10;
@@ -26,12 +27,19 @@ public class Init_Mirrors : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(InitMirrorTimer());
+		StartCoroutine(InitLaserTimer());
 	}
 
 	IEnumerator InitMirrorTimer()
 	{
-		yield return new WaitForSeconds(delay);
+		yield return new WaitForSeconds(mirrorDelay);
 		initMirrors ();
+	}
+
+	IEnumerator InitLaserTimer()
+	{
+		yield return new WaitForSeconds(laserDelay);
+		initLasers ();
 	}
 	
 	// Update is called once per frame
@@ -44,7 +52,12 @@ public class Init_Mirrors : MonoBehaviour {
 		fillerMirrors = numMirrors - solutionMirrors;
 		HashSet<Vector2Int> laserSet = new HashSet<Vector2Int> ();
 		HashSet<Vector2Int> mirrorSet = new HashSet<Vector2Int> ();
-		// init laser set with surrounding 4 squares? so they don't get filled
+		// init laser set with surrounding 4 squares so they don't get filled
+		for (int i = rows / 2 - 1; i <= rows / 2; i++) {
+			for (int j = cols / 2 - 1; j <= cols / 2; j++) {
+				laserSet.Add (new Vector2Int (j, i));
+			}
+		}
 		while (!randomSolution (ref laserSet, ref mirrorSet))
 			;
 		randomFiller (laserSet, mirrorSet);
@@ -56,8 +69,12 @@ public class Init_Mirrors : MonoBehaviour {
 			control.setManager (this);
 			mirrors.Add (point, mirror);
 		}
+	}
+
+	private void initLasers() {
 		Vector3 laserStartPos = new Vector3 ((laserStartX - (cols - 1) / 2.0f) * unit_w, laserHeight, -50);
 		laser = Instantiate(laserTemplate, laserStartPos, Quaternion.identity);
+		updateLaserPath ();
 	}
 
 	private Vector3 getTransformPos(Vector2Int p, float y = 0f) {
@@ -130,7 +147,7 @@ public class Init_Mirrors : MonoBehaviour {
 	}
 
 	public void updateLaserPath() {
-		LineRenderer line = laser.transform.GetChild (0).gameObject.GetComponent<LaserController> ().line;
+		LineRenderer line = laser.transform.GetChild (0).gameObject.GetComponent<LineRenderer> ();
 		line.enabled = true;
 		Vector3Int curPos = new Vector3Int (laserStartX, -1, 2);
 		List<Vector3> pts = new List<Vector3> ();
@@ -140,15 +157,25 @@ public class Init_Mirrors : MonoBehaviour {
 				curPos.x += delta_x[curPos.z];
 				curPos.y += delta_y[curPos.z];
 			} while(inBoundsNotMirror(curPos.x, curPos.y));
+//			Debug.Log ("curpos: " + curPos.x + "," + curPos.y);
 			pts.Add (getTransformPos (new Vector2Int (curPos.x, curPos.y), laserHeight));
 
 			if(mirrors.ContainsKey(new Vector2Int(curPos.x, curPos.y))) {
 				int mDir = mirrors [new Vector2Int (curPos.x, curPos.y)].GetComponent<InteractableMirrorController> ().dir;
+//				Debug.Log ("mdir= "+mDir);
 				if(mDir < 2*curPos.z && 2*curPos.z < mDir + laser_dirs || 0 <= 2*curPos.z && 2*curPos.z < mDir + laser_dirs - mirror_dirs) {
 					curPos.z = (mDir - curPos.z + laser_dirs) % laser_dirs;
 				} else break;
 			} else break;
 		}
+//		Debug.Log ("pt cnt; "+pts.Count);
+//		foreach (Vector3 pt in pts) {
+//			Debug.Log ("pt: "+pt.x + ", " + pt.y + ", " + pt.z);
+//		}
+//		foreach (KeyValuePair<Vector2Int, GameObject> pair in mirrors) {
+//			Debug.Log("dir: "+pair.Value.GetComponent<InteractableMirrorController>().dir);
+//		}
+		line.positionCount = pts.Count;
 		line.SetPositions (pts.ToArray ());
 	}
 }
