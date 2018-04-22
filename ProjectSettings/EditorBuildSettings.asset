@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Earth_Room.unity
     guid: 19ec0835855fd564bb969f835e5bdb97
+  - enabled: 1
+    path: Assets/Scenes/AirRoom.unity
+    guid: b06ab0a0d519fa24396edfa5fe45fe14
