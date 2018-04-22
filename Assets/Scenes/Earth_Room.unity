@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1001 &56188795
 Prefab:
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1001 &199045707
 Prefab:
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 10
 --- !u!1 &219373814
 GameObject:
@@ -1049,6 +1049,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1777462124451092, guid: f3faace7db6a95647b65a31ebddc4156,
     type: 2}
   m_PrefabInternal: {fileID: 936923983}
+--- !u!4 &422063430 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4557139550722496, guid: f3faace7db6a95647b65a31ebddc4156,
+    type: 2}
+  m_PrefabInternal: {fileID: 936923983}
 --- !u!136 &422063432
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1380,7 +1385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1001 &840511671
 Prefab:
@@ -1997,7 +2002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1001 &1269285064
 Prefab:
@@ -2088,7 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1001 &1313294846
 Prefab:
@@ -2441,7 +2446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1 &1618316162
 GameObject:
@@ -2804,7 +2809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1001 &1740298153
 Prefab:
@@ -3071,7 +3076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 1000000
 --- !u!1 &1860446559
 GameObject:
@@ -3519,7 +3524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e924e0f814b543bb6eb74f7da4c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 422063430}
   timer: 10
 --- !u!1001 &2007363784
 Prefab:
