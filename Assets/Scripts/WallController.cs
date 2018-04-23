@@ -45,6 +45,10 @@ public class WallController : MonoBehaviour {
         delay = d;
     }
 
+    public void SetEndPos(float s)
+    {
+        endPos = s;
+    }
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(delay);

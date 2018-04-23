@@ -216,4 +216,9 @@ public class Reflecting : MonoBehaviour
         reflectionMat.m32 = 0F;
         reflectionMat.m33 = 1F;
     }
+
+    private void OnBecameInvisible()
+    {
+        
+    }
 }

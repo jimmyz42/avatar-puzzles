@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6492,6 +6492,49 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e6a1f34187ab5c4c84012d323625283, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1353711285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1353711287}
+  - component: {fileID: 1353711286}
+  m_Layer: 0
+  m_Name: AirRoomEventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1353711286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353711285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0a3db0295876d4ba6cf366b6c8efd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Walls: {fileID: 1975500287}
+  wallSpeed: 10
+  wallDelay: 2
+--- !u!4 &1353711287
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353711285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1354400873
 Prefab:
   m_ObjectHideFlags: 0
@@ -7045,7 +7088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd58790666242ebb0f30e25e23261d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorDelay: 5
+  mirrorDelay: 0
   laserDelay: 10
   mirrorTemplate: {fileID: 1152045688753410, guid: 20c320aef89b2a745a241c741a7839c3,
     type: 2}
@@ -7056,6 +7099,8 @@ MonoBehaviour:
   numMirrors: 20
   solutionMirrors: 10
   laserHeight: 3
+  PlayEndGame: 0
+  winDelay: 0
 --- !u!4 &1477816565
 Transform:
   m_ObjectHideFlags: 0

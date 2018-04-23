@@ -254,11 +254,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DisablePixelLights: 1
-  m_TextureSize: 512
+  m_TextureSize: 128
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966991
 --- !u!114 &114907184691396476
 MonoBehaviour:
   m_ObjectHideFlags: 1
