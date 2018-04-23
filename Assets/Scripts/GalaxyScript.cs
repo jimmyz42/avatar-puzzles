@@ -23,7 +23,7 @@ public class GalaxyScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
         GameObject[] ex = GameObject.FindGameObjectsWithTag("Explosion");
-        Debug.Log(ex);
+        //Debug.Log(ex);
         foreach (GameObject x in ex)
         {
             Destroy(x);

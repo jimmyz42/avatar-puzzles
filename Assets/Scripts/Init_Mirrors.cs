@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Init_Mirrors : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class Init_Mirrors : MonoBehaviour {
 	public int solutionMirrors = 10;
 	public float laserHeight = 3;
 	public static int mirror_dirs = 16, laser_dirs = 8;
+    public bool PlayEndGame;
+    public float winDelay;
 
 	private int fillerMirrors;
 	private int unit_w = 10, unit_d = 10;
@@ -178,12 +181,22 @@ public class Init_Mirrors : MonoBehaviour {
 		line.positionCount = pts.Count;
 		line.SetPositions (pts.ToArray ());
 
-		if (curPos.x == laserEndX && curPos.y == rows && curPos.z == 2) {
+		if ((curPos.x == laserEndX && curPos.y == rows && curPos.z == 2) || PlayEndGame) {
 			onGameWin ();
 		}
 	}
 
-	public void onGameWin() {
+	public void onGameWin()
+    {
+        StartCoroutine(EndGame());
 		// TODO Brianna, make the doors open, or the walls sink, or something
 	}
+
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(winDelay);
+        Debug.Log("in end game");
+        EventManager.TriggerEvent("RemoveWalls");
+
+    }
 }
