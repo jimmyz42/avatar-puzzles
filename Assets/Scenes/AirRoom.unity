@@ -7474,7 +7474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mirrorDelay: 0
   laserDelay: 10
-  mirrorTemplate: {fileID: 1659005205379244, guid: 5bc10ef2edb34b34db80c97a0485dc6a,
+  mirrorTemplate: {fileID: 1152045688753410, guid: 20c320aef89b2a745a241c741a7839c3,
     type: 2}
   laserTemplate: {fileID: 1129658183089298, guid: f86a264d99cdc544a9f2f1dee96c4a20,
     type: 2}
