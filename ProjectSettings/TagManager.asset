@@ -23,6 +23,8 @@ TagManager:
   - Mirror
   - EarthGalaxy
   - Explosion
+  - GameMirror
+  - StartLaser
   layers:
   - Default
   - TransparentFX

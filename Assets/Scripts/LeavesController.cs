@@ -17,10 +17,7 @@ public class LeavesController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(disappear)
-        {
-            MoveDown();
-        }
+
 		
 	}
 

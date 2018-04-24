@@ -16,8 +16,13 @@ public class Init_Mirrors : MonoBehaviour {
 	public int solutionMirrors = 10;
 	public float laserHeight = 3;
 	public static int mirror_dirs = 16, laser_dirs = 8;
+
     public bool PlayEndGame;
     public float winDelay;
+    public GameObject Walls;
+    public float wallSpeed;
+    public float mirrorDestroy;
+    
 
 	private int fillerMirrors;
 	private int unit_w = 10, unit_d = 10;
@@ -188,6 +193,7 @@ public class Init_Mirrors : MonoBehaviour {
 
 	public void onGameWin()
     {
+        Debug.Log("Ending game");
         StartCoroutine(EndGame());
 		// TODO Brianna, make the doors open, or the walls sink, or something
 	}
@@ -195,8 +201,24 @@ public class Init_Mirrors : MonoBehaviour {
     IEnumerator EndGame()
     {
         yield return new WaitForSeconds(winDelay);
-        Debug.Log("in end game");
-        EventManager.TriggerEvent("RemoveWalls");
+        //Debug.Log("in end game");
+        WallController w = Walls.GetComponent<WallController>();
+        w.speed = wallSpeed;
+        w.SetEndPos(-100);
+        w.SetMove(true);
+        yield return new WaitForSeconds(mirrorDestroy);
+        Destroy(GameObject.FindGameObjectWithTag("StartLaser"));
+        DestoryMirrors();
 
+
+    }
+
+    void DestoryMirrors()
+    {
+        GameObject[] clones = GameObject.FindGameObjectsWithTag("GameMirror");
+        foreach (var clone in clones)
+        {
+            Destroy(clone);
+        }
     }
 }
