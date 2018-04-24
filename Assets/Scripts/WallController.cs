@@ -8,11 +8,12 @@ public class WallController : MonoBehaviour {
     public float speed;
     public float endPos;
     public float delay;
+    public GameObject LM;
 //    public GameObject LaserStart;
 //    public GameObject RealLaser;
 //    public LaserController laser;
     //public Vector3 startPos;
-    // Use this for initialization
+
     void Start ()
     {
 //        laser = RealLaser.GetComponent<LaserController>();
@@ -22,17 +23,25 @@ public class WallController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	    if (canMove)
+
+        FullMovement();
+
+	}
+    
+    void FullMovement()
+    {
+        if (endPos==transform.position.y)
+        {
+            //Do nothing
+            SetMove(false);
+            canMove = false;
+            Destroy(LM);
+        }
+        else if (canMove)
         {
             MoveDown();
         }
-
-        if (endPos==transform.position.y)
-        {
-            StartCoroutine(StartGame());
-        }
-	}
-
+    }
     void MoveDown()
     {
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, endPos, 0), speed * Time.deltaTime);
@@ -49,9 +58,15 @@ public class WallController : MonoBehaviour {
     {
         endPos = s;
     }
+
+    public void SetMove(bool w)
+    {
+        canMove = w;
+    }
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(delay);
+        SetMove(false);
 //        LaserStart.SetActive(true);
 //        laser.TurnLaserOn(true);
     }

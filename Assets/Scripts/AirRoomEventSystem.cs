@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AirRoomEventSystem : MonoBehaviour {
 
-    public GameObject Walls;
+    //public GameObject Walls;
     public float wallSpeed;
     public float wallDelay;
 
@@ -16,7 +16,7 @@ public class AirRoomEventSystem : MonoBehaviour {
 
     private void Start()
     {
-        
+        endWalls = new UnityAction(RemoveWalls);
     }
     void Awake()
     {
@@ -40,8 +40,9 @@ public class AirRoomEventSystem : MonoBehaviour {
     void RemoveWalls()
     {
 
-        WallController w = Walls.GetComponent<WallController>();
-        w.SetParams(true, wallSpeed, wallDelay);
-        w.SetEndPos(-100);
+        //Debug.Log("in Remove walls");
+        //WallController w = Walls.GetComponent<WallController>();
+        //w.SetParams(true, wallSpeed, wallDelay);
+        //w.SetEndPos(-100);
     }
 }

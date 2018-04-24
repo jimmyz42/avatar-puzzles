@@ -16,7 +16,7 @@ public class LevelConroller : MonoBehaviour {
 
     private WallController walls;
     private LeavesController leaves;
-
+    private bool cont;
     
 
 	// Use this for initialization
@@ -25,7 +25,7 @@ public class LevelConroller : MonoBehaviour {
         walls = Walls.GetComponent<WallController>();
         Walls.SetActive(false);
         leaves = Leaves.GetComponent<LeavesController>();
-
+        cont = true;
 
         //leaves.delay = leavesDrops;
 	}
@@ -33,7 +33,11 @@ public class LevelConroller : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        StartCoroutine(GoingToGame());	
+        if (cont)
+        {
+            StartCoroutine(GoingToGame());
+        }
+	
 	}
 
     IEnumerator GoingToGame()
@@ -43,6 +47,10 @@ public class LevelConroller : MonoBehaviour {
         walls.SetParams(true, wallSpeed, gameStartDelay);
         yield return new WaitForSeconds(leavesFallDelay);
         leaves.SetParams(true, leavesDrops);
+        cont = false;
+        Destroy(this.gameObject);
+        Debug.Log("suppose to be dead");
+        gameObject.SetActive(false);
 
     }
 }
