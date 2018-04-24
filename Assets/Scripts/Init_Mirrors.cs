@@ -22,6 +22,8 @@ public class Init_Mirrors : MonoBehaviour {
     public GameObject Walls;
     public float wallSpeed;
     public float mirrorDestroy;
+    public float exitDelay;
+    public float smokeDelay; 
     
 
 	private int fillerMirrors;
@@ -200,6 +202,7 @@ public class Init_Mirrors : MonoBehaviour {
 
     IEnumerator EndGame()
     {
+        Destroy(GameObject.FindGameObjectWithTag("StartLaser"));
         yield return new WaitForSeconds(winDelay);
         //Debug.Log("in end game");
         WallController w = Walls.GetComponent<WallController>();
@@ -207,8 +210,12 @@ public class Init_Mirrors : MonoBehaviour {
         w.SetEndPos(-100);
         w.SetMove(true);
         yield return new WaitForSeconds(mirrorDestroy);
-        Destroy(GameObject.FindGameObjectWithTag("StartLaser"));
+        
         DestoryMirrors();
+        yield return new WaitForSeconds(exitDelay);
+        EventManager.TriggerEvent("StartLeaves");
+        yield return new WaitForSeconds(smokeDelay);
+        EventManager.TriggerEvent("StartSmoke");
 
 
     }

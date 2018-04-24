@@ -11,30 +11,32 @@ public class AirRoomEventSystem : MonoBehaviour {
     public float wallDelay;
 
 
-    private UnityAction endWalls;
+    private UnityAction makeLeaves;
+    
 
 
     private void Start()
     {
-        endWalls = new UnityAction(RemoveWalls);
+        makeLeaves = new UnityAction(Start);
     }
     void Awake()
     {
 
-        endWalls= new UnityAction(RemoveWalls);
+        makeLeaves = new UnityAction(RemoveWalls);
+        
 
 
     }
 
     void OnEnable()
     {
-        EventManager.StartListening("RemoveWalls", endWalls);
+        EventManager.StartListening("RemoveWalls", makeLeaves);
 
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("RemoveWalls", endWalls);
+        EventManager.StopListening("RemoveWalls", makeLeaves);
     }
 
     void RemoveWalls()

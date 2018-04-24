@@ -102,10 +102,11 @@ public class RoomWorldController : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (gameObject.tag == "EarthWorld")
+        if (gameObject.tag == "EarthWorld" || gameObject.tag=="AirWorld")
         {
             isSelected = true;
         }
+
         
     }
 

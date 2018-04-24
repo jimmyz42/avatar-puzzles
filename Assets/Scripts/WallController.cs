@@ -9,6 +9,7 @@ public class WallController : MonoBehaviour {
     public float endPos;
     public float delay;
     public GameObject LM;
+    
 //    public GameObject LaserStart;
 //    public GameObject RealLaser;
 //    public LaserController laser;
@@ -16,8 +17,9 @@ public class WallController : MonoBehaviour {
 
     void Start ()
     {
-//        laser = RealLaser.GetComponent<LaserController>();
-//        LaserStart.SetActive(false);
+
+        //        laser = RealLaser.GetComponent<LaserController>();
+        //        LaserStart.SetActive(false);
     }
 	
 	// Update is called once per frame
