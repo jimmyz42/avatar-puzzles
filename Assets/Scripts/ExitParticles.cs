@@ -1,21 +1,67 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class ExitParticles : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public ParticleSystem[] leaves;
+    public GameObject exit;
+    public GameObject floorLeaves;
+    public float finalExitDelay;
+
+    private UnityAction start;
+    private UnityAction smoke;
 	
-	// Update is called once per frame
-	void Update () {
-		
+    // Use this for initialization
+	void Start ()
+    {
+        leaves = GetComponentsInChildren<ParticleSystem>();
+        exit.SetActive(false);
 	}
 
-    void StartParticles()
+    void Awake()
     {
 
+        start = new UnityAction(StartParticles);
+        smoke = new UnityAction(StartSmoke);
+
+    }
+
+    void OnEnable()
+    {
+        EventManager.StartListening("StartLeaves", start);
+        EventManager.StartListening("StartSmoke", smoke);
+
+    }
+
+    void OnDisable()
+    {
+        EventManager.StopListening("StartLeaves", start);
+        EventManager.StopListening("StartSmoke", smoke);
+    }
+
+
+    public void StartParticles()
+    {
+        floorLeaves.SetActive(false);
+        foreach (ParticleSystem l in leaves)
+        {
+            l.Play();
+        }
+    }
+
+    public void StartSmoke()
+    {
+
+        StartCoroutine(Exiting());
+    }
+
+    IEnumerator Exiting()
+    {
+        exit.SetActive(true);
+        yield return new WaitForSeconds(finalExitDelay);
+        SceneManager.LoadScene("AstralRoom");
     }
 }
