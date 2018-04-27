@@ -11,14 +11,17 @@ public class BubblingScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        transform.position = new Vector3(Random.Range(-100, 100), -5.4f, Random.Range(-100, 100));
         oriPos = transform.position.y;
+        speed = Random.Range(2, 6);
+        
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         StartCoroutine(Bubbling());
-        transform.RotateAround(target.transform.position, Vector3.up, 10 * Time.deltaTime);
+        
     }
 
     void Bobbing()
@@ -27,16 +30,39 @@ public class BubblingScript : MonoBehaviour {
         transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
     }
 
+    void Circling()
+    {
+        transform.RotateAround(target.transform.position, Vector3.up, 10 * Time.deltaTime);
+    }
+
+    void MovingPos()
+    {
+        transform.position = new Vector3(Random.Range(-100, 100), transform.position.y, Random.Range(-100, 100));
+        while ((-25f<transform.position.x && transform.position.x<25f) || (90f > transform.position.z && transform.position.z > 25f))
+        {
+            MovingPos();
+        }
+    }
+
     IEnumerator Bubbling()
     {
-        yield return new WaitForSeconds(Random.Range(1, 10));
+        //yield return new WaitForSeconds(Random.Range(10, 30));
+        
+        yield return new WaitForSeconds(Random.Range(5, 40));
         Bobbing();
         if (transform.position.y == endPos)
         {
             float t = endPos;
             endPos = oriPos;
             oriPos = t;
+            if (endPos==-5.4f && Random.value<.5f)
+            {
+                yield return new WaitForSeconds(Random.Range(5, 50));
+                MovingPos();
+            }
+            
         }
+        
         
     }
 }
