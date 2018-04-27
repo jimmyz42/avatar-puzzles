@@ -99,7 +99,6 @@ namespace RockInteractionNameSpace
         {
             if (numPressed != 0)
             {
-                //Debug.Log("get direction called");
 
                 Vector3 leftHandPos = GetLeftHandPos();
                 Vector3 rightHandPos = GetRightHandPos();
@@ -107,25 +106,24 @@ namespace RockInteractionNameSpace
                 float leftDistance = Vector3.Distance(leftStartPos, leftHandPos);
                 float rightDistance = Vector3.Distance(rightStartPos, rightHandPos);
 
-                //Debug.Log("left distance: " + leftDistance + " right dist: " + rightDistance);   
+                  
                 if (leftDistance > minDist && rightDistance > minDist) {
-                    Debug.Log(leftDistance + " " + rightDistance + " " + minDist);
+                    
                     DIRECTION leftDir = getDirection(leftHandPos - leftStartPos);
                     DIRECTION rightDir = getDirection(rightHandPos - rightStartPos);
-                    Debug.Log("left dir: " + leftDir + " right dir: " + rightDir);
+                    
                     if (leftDir == rightDir)
                     {
                         handleBending(leftDir);
                     }
                 }
             }
-            //Debug.Log("update done");
+            
         }
 
         void handleBending(DIRECTION dir)
         {
             if (dir == DIRECTION.NONE || controller == null) return;
-            Debug.Log("handle bending called " + dir);
             switch(dir)
             {
                 case DIRECTION.UP:
@@ -136,23 +134,26 @@ namespace RockInteractionNameSpace
                     break;
                 case DIRECTION.LEFT:
                     controller.slideRock(InteractableRockController.Direction.LEFT);
+                    controller.unselectRock();
                     break;
                 case DIRECTION.RIGHT:
                     controller.slideRock(InteractableRockController.Direction.RIGHT);
+                    controller.unselectRock();
                     break;
                 case DIRECTION.FRONT:
                     controller.slideRock(InteractableRockController.Direction.UP);
+                    controller.unselectRock();
                     break;
                 case DIRECTION.BACK:
                     controller.slideRock(InteractableRockController.Direction.DOWN);
+                    controller.unselectRock();
                     break;
             }
         }
 
         DIRECTION getDirection(Vector3 v)
         {
-            Debug.Log("get directoin  " + v);
-            Debug.Log("angel to up: " + Vector3.Angle(v, Vector3.up));
+           
             if(Vector3.Angle(v, Vector3.up) < maxAngle)
             {
                 return DIRECTION.UP;
