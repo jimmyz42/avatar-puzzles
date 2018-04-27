@@ -162,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272733266319528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8, y: 68.4, z: -138.3}
+  m_LocalPosition: {x: -6.8, y: 84, z: -138.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4953420947900454}
@@ -288,11 +288,11 @@ ParticleAnimator:
   colorAnimation[4]:
     serializedVersion: 2
     rgba: 4294967295
-  worldRotationAxis: {x: 0, y: 0, z: 0}
-  localRotationAxis: {x: 0, y: 0, z: 0}
+  worldRotationAxis: {x: 0, y: -0.26, z: 0}
+  localRotationAxis: {x: 0, y: -2.94, z: 0}
   sizeGrow: 0.2
   rndForce: {x: 0, y: -10, z: 0}
-  force: {x: 0, y: -14, z: 0}
+  force: {x: 0, y: -14, z: -14.47}
   damping: 0.5
   stopSimulation: 0
   autodestruct: 1
@@ -438,7 +438,7 @@ EllipsoidParticleEmitter:
   rndRotation: 0
   Simulate in Worldspace?: 1
   m_OneShot: 0
-  m_Ellipsoid: {x: 3, y: 0, z: 0}
+  m_Ellipsoid: {x: 6.04, y: 0, z: 0}
   m_MinEmitterRange: 0
 --- !u!15 &15323581475364462
 EllipsoidParticleEmitter:
@@ -722,7 +722,7 @@ ParticleRenderer:
   m_CameraVelocityScale: 0
   m_StretchParticles: 3
   m_LengthScale: -1.6
-  m_VelocityScale: 0.34242648
+  m_VelocityScale: 0.57
   m_MaxParticleSize: 0.15757358
   UV Animation:
     x Tile: 1
