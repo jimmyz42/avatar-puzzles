@@ -76,7 +76,7 @@ namespace ControllerSelection
             RaycastHit hit; // Was anything hit?
             if (Physics.Raycast(pointer, out hit, raycastDistance, ~excludeLayers))
             {
-                if (lastHit != null && lastHit != hit.transform) // if we hit a different object, exit hover for old object
+				if (lastHit != null && lastHit != hit.transform && !OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, activeController)) // if we hit a different object, exit hover for old object
                 {
                     if (onHoverExit != null)
                     {
