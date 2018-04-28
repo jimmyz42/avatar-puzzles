@@ -48,7 +48,7 @@ public class Init_Rocks : MonoBehaviour {
 		}
 		foreach (Vector2Int point in points) {
 			Vector3 pos = getTransformPos (point);
-			GameObject rock = Instantiate(rockTemplate, pos, Quaternion.identity);
+			GameObject rock = Instantiate(rockTemplate, pos, Quaternion.identity, gameObject.transform);
 			InteractableRockController control = rock.GetComponent<InteractableRockController> ();
 			control.setManager (this);
 			control.setPosition (point);

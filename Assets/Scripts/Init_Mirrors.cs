@@ -74,7 +74,7 @@ public class Init_Mirrors : MonoBehaviour {
 
 		foreach (Vector2Int point in mirrorSet) {
 			Vector3 pos = getTransformPos (point, -5f);
-			GameObject mirror = Instantiate(mirrorTemplate, pos, Quaternion.identity);
+			GameObject mirror = Instantiate(mirrorTemplate, pos, Quaternion.identity, gameObject.transform);
 			InteractableMirrorController control = mirror.GetComponent<InteractableMirrorController> ();
 			control.setManager (this);
 			mirrors.Add (point, mirror);
