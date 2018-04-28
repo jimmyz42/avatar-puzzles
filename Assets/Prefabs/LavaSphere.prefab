@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114260331081871808}
   - component: {fileID: 114005240009035472}
   m_Layer: 0
-  m_Name: LavaBubble
+  m_Name: LavaSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,14 +5,13 @@ using UnityEngine;
 public class LavaBubbleScript : MonoBehaviour {
 
     public ParticleSystem bubbles;
-    private ParticleSystem.MainModule ma;
-
+    public bool canMove;
 	// Use this for initialization
 	void Start () {
         bubbles = GetComponent<ParticleSystem>();
-        transform.position = new Vector3(Random.Range(-100, 100), 3f, Random.Range(-100, 100));
-        ma = bubbles.main;
-        ma.startDelay = Random.Range(5, 20);
+        while ((-30f < transform.position.x && transform.position.x < 30f) || (30f > transform.position.z && transform.position.z > -30f))
+            transform.position = new Vector3(Random.Range(-100, 100), 3f, Random.Range(-100, 100));
+        StartCoroutine(Bubbling());
         //bubbles.Stop();
     }
 	
@@ -20,20 +19,21 @@ public class LavaBubbleScript : MonoBehaviour {
 	void Update ()
     {
         
-        if(bubbles.isStopped)
+       /*if(bubbles.isStopped && canMove)
         {
             MovingPos();
+            canMove = false;
         }
         //bubbles.Play();
-        Debug.Log(bubbles.isEmitting);
-        //StartCoroutine(Bubbling());
+       // Debug.Log(bubbles.isEmitting);*/
+        
     }
 
     void MovingPos()
     {
         //bubbles.Stop();
         transform.position = new Vector3(Random.Range(-100, 100), transform.position.y, Random.Range(-100, 100));
-        while ((-25f < transform.position.x && transform.position.x < 25f) || (90f > transform.position.z && transform.position.z > 25f))
+        while ((-30f < transform.position.x && transform.position.x < 30f) || (30f > transform.position.z && transform.position.z > -30f))
         {
             MovingPos();
         }
@@ -41,15 +41,19 @@ public class LavaBubbleScript : MonoBehaviour {
 
     IEnumerator Bubbling()
     {
-        if (true)
+        while (enabled)
         {
             yield return new WaitForSeconds(Random.Range(5f, 20f));
             bubbles.Play();
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
+            //canMove = false;
+            yield return new WaitForSeconds(Random.Range(2f, 4f));
+            bubbles.Stop();
+            MovingPos();
+            yield return new WaitForSeconds(Random.Range(1f,4f));
+            //canMove = true;
+
         }
 
-        
-        MovingPos();
 
     }
 
