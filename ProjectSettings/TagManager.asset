@@ -21,6 +21,10 @@ TagManager:
   - Second_Floor
   - EarthWorld
   - StartLaser
+  - LeafFloor
+  - StartFloor
+  - EndEffect
+  - Movable_Mirror
   layers:
   - Default
   - TransparentFX

@@ -485,6 +485,59 @@ Transform:
   m_PrefabParentObject: {fileID: 4989591685379206, guid: 8e6a1f34187ab5c4c84012d323625283,
     type: 2}
   m_PrefabInternal: {fileID: 1523568114}
+--- !u!1 &85565195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 85565198}
+  - component: {fileID: 85565197}
+  - component: {fileID: 85565196}
+  m_Layer: 0
+  m_Name: OVRMirrorInteraction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &85565196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85565195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33eed2db5dd76467aa53d3dbd8f4022b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &85565197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85565195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3292ddc88e6ee9747a2460eb59aef452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yellowMat: {fileID: 2100000, guid: 5d1e07c8dcc9f0740bde7899dcf7a37d, type: 2}
+--- !u!4 &85565198
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85565195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &94633563
 Prefab:
   m_ObjectHideFlags: 0
@@ -7720,7 +7773,7 @@ GameObject:
   - component: {fileID: 1477816564}
   m_Layer: 0
   m_Name: Mirrors
-  m_TagString: Untagged
+  m_TagString: Movable_Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
