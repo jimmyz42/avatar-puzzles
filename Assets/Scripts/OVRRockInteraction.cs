@@ -33,7 +33,6 @@ namespace RockInteractionNameSpace
 
         new public void OnHoverExit(Transform t)
         {
-
             if (t.gameObject.tag == "Movable_Rock")
             {
                 t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
@@ -44,6 +43,8 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
+                oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
+                if (yellowMat != null) { t.gameObject.GetComponent<Renderer>().material = yellowMat; }
                 numPressed++;
 
                 if (numPressed == 1)
@@ -64,12 +65,12 @@ namespace RockInteractionNameSpace
             {
 
                 numPressed--;
-
                 if (numPressed == 0)
                 {
                     t.gameObject.GetComponent<InteractableRockController>().unselectRock();
                     controller = null;
                 }
+                t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
             }
         }
 
