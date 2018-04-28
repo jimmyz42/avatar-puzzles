@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1096721252}
-  m_IndirectSpecularColor: {r: 0.030556457, g: 0.031448934, b: 0.030278256, a: 1}
+  m_IndirectSpecularColor: {r: 0.031817354, g: 0.03165754, b: 0.03153902, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -568,6 +568,11 @@ Prefab:
     - target: {fileID: 1103293303748908, guid: f376a428abc2e814c8f9c3db16efab87, type: 2}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 114316294904386102, guid: f376a428abc2e814c8f9c3db16efab87,
+        type: 2}
+      propertyPath: connectedWorld
+      value: FireRoom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f376a428abc2e814c8f9c3db16efab87, type: 2}
