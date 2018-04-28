@@ -48,28 +48,13 @@ public class Init_Rocks : MonoBehaviour {
 		}
 		foreach (Vector2Int point in points) {
 			Vector3 pos = getTransformPos (point);
-			GameObject rock = Instantiate(rockTemplate, pos, Quaternion.identity, gameObject.transform);
+			GameObject rock = Instantiate(rockTemplate, pos, Quaternion.identity);
 			InteractableRockController control = rock.GetComponent<InteractableRockController> ();
 			control.setManager (this);
 			control.setPosition (point);
 			rocks.Add (point, rock);
 		}
-
-        StartCoroutine(PlayInitSounds());
-
 	}
-
-    IEnumerator PlayInitSounds()
-    {
-
-        foreach (KeyValuePair<Vector2Int, GameObject> rockTuple in rocks) {
-            GameObject rock = rockTuple.Value;
-            InteractableRockController controller = rock.GetComponent<InteractableRockController>();
-            controller.playSlidingSfx();
-            yield return new WaitForSeconds(.05f);
-        }
-
-    }
 
 	public Vector2Int moveRock(Vector2Int pos, int dx, int dy) {
 		Vector2Int cur = pos;

@@ -20,11 +20,6 @@ public class InteractableRockController : MonoBehaviour {
 	private static int[] delta_x = { 1, 0, -1, 0 };
 	private static int[] delta_z = { 0, 1, 0, -1 };
 
-    private bool isMoving = false;
-    public AudioSource audioSource;
-    public AudioClip slidingSFX;
-    public AudioClip collisionSFX;
-
 	// Use this for initialization
 	void Start ()
     {
@@ -46,26 +41,7 @@ public class InteractableRockController : MonoBehaviour {
 		Vector3 target = targetPos;
 		target.y = gameObject.transform.position.y; // don't change y, only x and z
 		gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target, speed * Time.deltaTime);
-
-        // detect collision and play collision sound
-        if (isMoving) {
-            if (Vector3.Distance(target, gameObject.transform.position) < 2) {
-                playCollisionSfx();
-                isMoving = false;
-            }
-        }
-
 	}
-
-    public void playCollisionSfx() {
-        audioSource.clip = collisionSFX;
-        audioSource.Play();
-    }
-
-    public void playSlidingSfx() {
-        audioSource.clip = slidingSFX;
-        audioSource.Play();
-    }
 
 	void OnMouseDown() {
 		if (selectedRock != gameObject) {
@@ -112,10 +88,5 @@ public class InteractableRockController : MonoBehaviour {
 		// selectedRock is this.gameObject, so just move self
 		int dir = (int)direction;
 		setPosition(manager.moveRock (this.position, delta_x [dir], delta_z [dir]));
-
-        // register slide start and play sound
-        isMoving = true;
-        playSlidingSfx();
-
 	}
 }

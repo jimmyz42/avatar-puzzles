@@ -4,16 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/AstralRoom.unity
-    guid: 13f84a717da2fda43ba9c53dc777e715
-  - enabled: 1
-    path: Assets/Scenes/Earth_Room.unity
-    guid: 19ec0835855fd564bb969f835e5bdb97
-  - enabled: 1
-    path: Assets/Scenes/AirRoom.unity
-    guid: b06ab0a0d519fa24396edfa5fe45fe14
-  - enabled: 1
-    path: Assets/Scenes/FireRoom.unity
-    guid: 6e1c6d28ccc695142a3435d88f15ae4d
+  m_Scenes: []

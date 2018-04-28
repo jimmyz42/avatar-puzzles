@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class OVRWorldChoosingInteraction : MonoBehaviour {
 
-    public AudioSource audioSource;
-    public AudioClip selectedWorld;
-
 	// Use this for initialization
 	void Start () {
 		
@@ -26,12 +23,11 @@ public class OVRWorldChoosingInteraction : MonoBehaviour {
             earthWorldController.isSelected = true;
             //earthWorldController.transitioning = true;
             //StartCoroutine(earthWorldController.EnteringTheWorld());
-            playSelectedWorldAudio();
         }
-    }
+        else
+        {
+            Debug.Log("Selected something else");
+        }
 
-    void playSelectedWorldAudio() {
-        audioSource.clip = selectedWorld;
-        audioSource.Play();
     }
 }

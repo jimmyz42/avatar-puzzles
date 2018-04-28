@@ -4,26 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Movable_Rock
   - Falling_Rock
-  - BlackFloor
-  - Floor
-  - Rotating_Rock
-  - EarthWorld
-  - EndEffect
-  - EndFloor
-  - DiffFloor
-  - Second_Floor
-  - StartFloor
+  - GameMirror
+  - Mirror
   - Leaves
+  - TwirlLeaves
   - TwirlAnchor
   - GameLeaf
-  - TwirlLeaves
-  - LeafFloor
-  - Mirror
-  - EarthGalaxy
+  - Fire
   - Explosion
-  - GameMirror
+  - EarthGalaxy
+  - Floor
+  - DiffFloor
+  - Rotating_Rock
+  - Movable_Rock
+  - Second_Floor
+  - EarthWorld
   - StartLaser
   layers:
   - Default
@@ -34,7 +30,7 @@ TagManager:
   - UI
   - 
   - 
-  - Mirror
+  - 
   - 
   - 
   - 
