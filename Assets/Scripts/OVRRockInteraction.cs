@@ -21,7 +21,7 @@ namespace RockInteractionNameSpace
         private enum DIRECTION { LEFT, RIGHT, UP, DOWN, FRONT, BACK, NONE };
         private InteractableRockController controller;
 
-        public void OnHoverEnter(Transform t)
+        new public void OnHoverEnter(Transform t)
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
@@ -31,7 +31,7 @@ namespace RockInteractionNameSpace
             }
         }
 
-        public void OnHoverExit(Transform t)
+        new public void OnHoverExit(Transform t)
         {
 
             if (t.gameObject.tag == "Movable_Rock")
@@ -40,7 +40,7 @@ namespace RockInteractionNameSpace
             }
         }
 
-        public void OnSelect(Transform t)
+        public new void OnSelect(Transform t)
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
@@ -58,7 +58,7 @@ namespace RockInteractionNameSpace
         }
 
 
-        public void OnDeselect(Transform t)
+        new public void OnDeselect(Transform t)
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
