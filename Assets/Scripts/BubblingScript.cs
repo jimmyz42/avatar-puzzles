@@ -11,7 +11,7 @@ public class BubblingScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        transform.position = new Vector3(Random.Range(-100, 100), -5.4f, Random.Range(-100, 100));
+        transform.position = new Vector3(Random.Range(-100, 100), 3f, Random.Range(-100, 100));
         oriPos = transform.position.y;
         speed = Random.Range(2, 6);
         
@@ -38,7 +38,7 @@ public class BubblingScript : MonoBehaviour {
     void MovingPos()
     {
         transform.position = new Vector3(Random.Range(-100, 100), transform.position.y, Random.Range(-100, 100));
-        while ((-25f<transform.position.x && transform.position.x<25f) || (90f > transform.position.z && transform.position.z > 25f))
+        while ((-30f<transform.position.x && transform.position.x<30f) || (30f > transform.position.z && transform.position.z > -30f))
         {
             MovingPos();
         }

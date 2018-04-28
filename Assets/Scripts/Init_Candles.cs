@@ -46,7 +46,7 @@ public class Init_Candles : MonoBehaviour {
 			for (int j = 0; j < cols; j++) {
 				float angle = Mathf.PI*2 * j/cols;
 				// TODO Brianna please move the scene to (0, 0) so we don't need the offset
-				Vector3 pos = new Vector3 (r * Mathf.Cos (angle), 1.8f, 59.09f + r * Mathf.Sin (angle));
+				Vector3 pos = new Vector3 (r * Mathf.Cos (angle), 1.8f,  r * Mathf.Sin (angle));
 				GameObject candle = Instantiate(candleTemplate, pos, Quaternion.identity, gameObject.transform);
 				CandleController control = candle.GetComponent<CandleController> ();
 				control.setManager (this);
