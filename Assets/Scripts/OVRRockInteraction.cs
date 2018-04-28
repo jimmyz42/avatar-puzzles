@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace RockInteractionNameSpace
 {
-    public class OVRRockInteraction : MonoBehaviour
+	public class OVRRockInteraction : OVRInteractable
     {
 
         protected Material oldHoverMat;
