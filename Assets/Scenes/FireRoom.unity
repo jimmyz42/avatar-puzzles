@@ -3438,7 +3438,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 224de5a1c3ba5f948af30bd7826e4666, type: 2}
+  - {fileID: 2100000, guid: 42e26e838cb21e944aa7de2aae4edefc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3532,8 +3532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneStartTimer: 1
-  candleTemplate: {fileID: 1883109017504602, guid: 1269e88259242c54d99e1b2af7e65665,
-    type: 2}
+  candleTemplate: {fileID: 100000, guid: 7599a4bcaffc64c94985657b07417a7e, type: 3}
   minRows: 2
   maxRows: 5
   minCols: 5
