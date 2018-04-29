@@ -24,12 +24,12 @@ public class CandleController : MonoBehaviour {
 
     void OnEnable()
     {
-        EventManager.StartListening("TurnTheFlamesRed", BecomeRed);
+        EventManager.StartListening("TurnTheFlamesRed", red);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("TurnTheFlamesRed", BecomeRed);    
+        EventManager.StopListening("TurnTheFlamesRed", red);    
     }
     void Start ()
     {
@@ -42,8 +42,8 @@ public class CandleController : MonoBehaviour {
     }
 
 	void OnMouseDown() {
-		// Select and Unselect are not needed for clicks
-		// They only exist because the OVR controller uses them
+        // Select and Unselect are not needed for clicks
+        // They only exist because the OVR controller uses thems
 		selectCandle ();
 		toggleCandle ();
 		unselectCandle ();

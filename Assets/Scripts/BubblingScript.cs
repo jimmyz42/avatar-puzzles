@@ -38,7 +38,7 @@ public class BubblingScript : MonoBehaviour {
     void MovingPos()
     {
         transform.position = new Vector3(Random.Range(-100, 100), transform.position.y, Random.Range(-100, 100));
-        while ((-30f<transform.position.x && transform.position.x<30f) || (30f > transform.position.z && transform.position.z > -30f))
+        while ((-35f<transform.position.x && transform.position.x<35f) || (35f > transform.position.z && transform.position.z > -35f))
         {
             MovingPos();
         }
