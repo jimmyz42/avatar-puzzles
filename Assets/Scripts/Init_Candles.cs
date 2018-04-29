@@ -104,6 +104,8 @@ public class Init_Candles : MonoBehaviour {
 	}
 
 	public void onGameWin() {
-		// TODO Brianna
-	}
+        // TODO Brianna
+        EventManager.TriggerEvent("TurnTheFlamesRed");
+        
+    }
 }
