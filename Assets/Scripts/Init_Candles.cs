@@ -10,17 +10,20 @@ public class Init_Candles : MonoBehaviour {
 	public bool randomInit = false;
 	private int rows, cols;
 	private GameObject[,] candles;
+    public bool canWin;
 
 	public bool PlayEndGame;
+
 
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(InitCandleTimer());
+        StartCoroutine(CheckForWin());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (checkWinCondition () || PlayEndGame) {
+        if (canWin && (checkWinCondition () || PlayEndGame)) {
 			onGameWin ();
 		}
 	}
@@ -45,8 +48,7 @@ public class Init_Candles : MonoBehaviour {
 			float r = lowerBound * Mathf.Pow (upperBound / lowerBound, (i + 1.0f) / (rows + 1.0f));
 			for (int j = 0; j < cols; j++) {
 				float angle = Mathf.PI*2 * j/cols;
-				// TODO Brianna please move the scene to (0, 0) so we don't need the offset
-				Vector3 pos = new Vector3 (r * Mathf.Cos (angle), 1.8f,  r * Mathf.Sin (angle));
+				Vector3 pos = new Vector3 (r * Mathf.Cos (angle), .07f,  r * Mathf.Sin (angle));
 				GameObject candle = Instantiate(candleTemplate, pos, Quaternion.identity, gameObject.transform);
 				CandleController control = candle.GetComponent<CandleController> ();
 				control.setManager (this);
@@ -103,7 +105,16 @@ public class Init_Candles : MonoBehaviour {
 		return true;
 	}
 
-	public void onGameWin() {
-		// TODO Brianna
-	}
+    IEnumerator CheckForWin()
+    {
+        yield return new WaitForSeconds(sceneStartTimer + 2f);
+        canWin = true;
+    }
+	public void onGameWin()
+    {
+        // TODO Brianna
+        EventManager.TriggerEvent("TurnTheFlamesRed");
+        EventManager.TriggerEvent("StartTheSmoke");
+    }
+
 }
