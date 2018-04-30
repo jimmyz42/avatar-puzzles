@@ -10143,18 +10143,6 @@ Prefab:
       propertyPath: m_Name
       value: Leaf (30)
       objectReference: {fileID: 0}
-    - target: {fileID: 4989591685379206, guid: 8e6a1f34187ab5c4c84012d323625283, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.13256402
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989591685379206, guid: 8e6a1f34187ab5c4c84012d323625283, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.081251055
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989591685379206, guid: 8e6a1f34187ab5c4c84012d323625283, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.15082885
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e6a1f34187ab5c4c84012d323625283, type: 2}
   m_IsPrefabParent: 0
