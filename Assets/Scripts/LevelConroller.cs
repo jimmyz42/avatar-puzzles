@@ -25,7 +25,7 @@ public class LevelConroller : MonoBehaviour {
     {
         walls = Walls.GetComponent<WallController>();
         Walls.SetActive(false);
-        leaves = Leaves.GetComponent<LeavesController>();
+        //leaves = Leaves.GetComponent<LeavesController>();
         cont = true;
         //inside.SetActive(false);
         //leaves.delay = leavesDrops;
@@ -47,13 +47,13 @@ public class LevelConroller : MonoBehaviour {
         Walls.SetActive(true);
         walls.SetParams(true, wallSpeed, gameStartDelay);
         yield return new WaitForSeconds(leavesFallDelay);
-        leaves.SetParams(true, leavesDrops);
+        //leaves.SetParams(true, leavesDrops);
         cont = false;
         //inside.SetActive(true);
         
 
         Destroy(this.gameObject);
-        Debug.Log("suppose to be dead");
+        //Debug.Log("suppose to be dead");
         gameObject.SetActive(false);
 
     }
