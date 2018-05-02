@@ -15,7 +15,7 @@ public class LeafController : MonoBehaviour {
     public Collider col;
 
     public bool doingTwirls;
-    Vector3 posOffset = new Vector3();
+    //Vector3 posOffset = new Vector3();
     Vector3 tempPos = new Vector3();
     
     // Use this for initialization
@@ -88,7 +88,7 @@ public class LeafController : MonoBehaviour {
     public void TwirlsOff(bool t)
     {
         doingTwirls = !t;
-        Debug.Log("leaf");
+        //Debug.Log("leaf");
     }
 
 }
