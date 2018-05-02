@@ -25,6 +25,9 @@ TagManager:
   - Explosion
   - GameMirror
   - StartLaser
+  - RockPillar
+  - WaterPipe
+  - GoalHole
   layers:
   - Default
   - TransparentFX
