@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaterPipeScript : MonoBehaviour {
 
     public Vector3 oriPos;
+    public Quaternion oriRot;
     public GameObject shatter_template;
 
     private GameObject waterInpipe;
@@ -28,6 +29,7 @@ public class WaterPipeScript : MonoBehaviour {
     {
         //Get the starting posistion so it knows what to return too
         oriPos = transform.position;
+        oriRot = transform.rotation;
     }
     private void Update()
     {
@@ -72,6 +74,7 @@ public class WaterPipeScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(4.5f);
         transform.position = oriPos;
+        transform.rotation = oriRot;
         dissolver.Restore();
         yield return new WaitForSeconds(.5f);
         Restore();
