@@ -21,8 +21,8 @@ public class LakeScript : MonoBehaviour {
 
 	void Awake ()
     {
-        initalPos = new Vector3(-375, 89.4f, -1);
-        bottomPos = new Vector3(-375, 1.2f, -1);
+        initalPos = new Vector3(-476, 89.4f, -1);
+        bottomPos = new Vector3(initalPos.x, .5f, initalPos.z);
         transform.position = initalPos;
         drop = new UnityAction(IsMovingDown);
         raise = new UnityAction(RaiseWaterLevel);
@@ -58,7 +58,7 @@ public class LakeScript : MonoBehaviour {
         {
             MoveDown();
         }
-        else if (canMove && (transform.position.y <=initalPos.y || transform.position.y>=bottomPos.y))
+        else if (canMove && (transform.position.y <=initalPos.y && transform.position.y>=bottomPos.y))
         {
             transform.position = Vector3.MoveTowards(transform.position, target, 5 * Time.deltaTime);
 
