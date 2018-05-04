@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33688957511135078}
   - component: {fileID: 136108684782774356}
   - component: {fileID: 23030335622808996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RockPillar
   m_TagString: RockPillar
   m_Icon: {fileID: 0}
