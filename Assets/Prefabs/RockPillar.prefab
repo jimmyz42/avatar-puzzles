@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33688957511135078}
   - component: {fileID: 136108684782774356}
   - component: {fileID: 23030335622808996}
+  - component: {fileID: 114465823067119942}
   m_Layer: 8
   m_Name: RockPillar
   m_TagString: RockPillar
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1993147521011548}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114465823067119942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993147521011548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656757d497c264c1e9e34e8fd0790377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riseSpeed: 50
 --- !u!136 &136108684782774356
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -496,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnFireOn: 0
   TurnFireRed: 0
+  riseSpeed: 2
 --- !u!114 &114554169016186644
 MonoBehaviour:
   m_ObjectHideFlags: 1

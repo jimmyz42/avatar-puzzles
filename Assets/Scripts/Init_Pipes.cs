@@ -18,7 +18,7 @@ public class Init_Pipes : MonoBehaviour {
 	private float unit_w;
 	private float unit_off;
 	private float pipe_R = 2f, pipe_h = 3.5f;
-	private float rock_buffer = 10f, pipe_buffer = 0.5f;
+	private float rock_buffer = 5f, pipe_buffer = 0.5f;
 	private GameObject[] pipes;
 	private Dictionary<int, int> pipeToHole = new Dictionary<int, int>();
 	private int selectedPipe = -1, selectedHole = -1;
@@ -92,7 +92,7 @@ public class Init_Pipes : MonoBehaviour {
 		}
 		for (int i = 0; i < numPipes; i++) {
 			// create pipe
-			Vector3 pos = new Vector3 (unit_w * i + unit_off, 83 + pipe_h * i, 443);
+			Vector3 pos = new Vector3 (unit_w * i + unit_off, 83 + pipe_h * i, 480);
 			GameObject pipe = Instantiate (pipeTemplate, pos, Quaternion.identity, gameObject.transform.GetChild(0));
 			pipe.transform.localScale = new Vector3 (1.25f, 1.25f, 1.25f);
 			pipes [i] = pipe;
@@ -126,7 +126,7 @@ public class Init_Pipes : MonoBehaviour {
 			} while(r < minRockSize);
 			rocks.Add(new rock(x, y, r));
 			// create rock
-			Vector3 pos = new Vector3 (y, 50, -x);
+			Vector3 pos = new Vector3 (y, -50, -x);
 			GameObject rock = Instantiate(rockTemplate, pos, Quaternion.identity, gameObject.transform.GetChild(2));
 			rock.transform.localScale = new Vector3 (r, 50.0f, r);
 		}

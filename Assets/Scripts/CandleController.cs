@@ -11,6 +11,7 @@ public class CandleController : MonoBehaviour {
     private ParticleSystem.MainModule f;
     public bool TurnFireOn;
     public bool TurnFireRed;
+	public float riseSpeed;
 
 	private static GameObject selectedCandle = null;
 	private Init_Candles manager;
@@ -73,6 +74,12 @@ public class CandleController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+		if (gameObject.transform.position.y < .07f) {
+			float newY = Mathf.Min (.07f, gameObject.transform.position.y + riseSpeed * Time.deltaTime);
+			Vector3 target = gameObject.transform.position;
+			target.y = newY;
+			gameObject.transform.position = target;
+		}
 		fire.SetActive (TurnFireOn);
 	}
 
