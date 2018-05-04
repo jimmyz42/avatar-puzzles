@@ -25,9 +25,14 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-                // highlight rock
-                oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
+                Debug.Log(numPressed);
+                if (numPressed < 1)
+                {
+                    // Debug.Log(numPressed);
+                    // highlight rock
+                    oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
                 if (yellowMat != null) { t.gameObject.GetComponent<Renderer>().material = yellowMat;}
+                }
             }
         }
 
@@ -35,7 +40,10 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-                t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
+                if (numPressed < 1)
+                {
+                    t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
+                }
             }
         }
 
@@ -43,10 +51,10 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-                oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
-                if (yellowMat != null) { t.gameObject.GetComponent<Renderer>().material = yellowMat; }
+                //oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
+                //if (yellowMat != null) { t.gameObject.GetComponent<Renderer>().material = yellowMat; }
                 numPressed++;
-
+                Debug.Log("numPressed Up");
                 if (numPressed == 1)
                 {
                     //t.gameObject.GetComponent<InteractableRockController>().selectRock();
@@ -63,7 +71,7 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-
+                Debug.Log("numPressed Down");
                 numPressed--;
                 if (numPressed == 0)
                 {
