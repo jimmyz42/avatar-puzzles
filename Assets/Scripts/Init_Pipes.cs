@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Init_Pipes : MonoBehaviour {
 
@@ -50,6 +51,8 @@ public class Init_Pipes : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(sceneStartTimer);
 		initPipes ();
+        EventManager.TriggerEvent("CalculateSegment");
+
 	}
 
 	struct line {

@@ -6,7 +6,7 @@
 		_DissolveTexture("Disolve Texture", 2D)= "white" {}
 		_DisolveY("Current Y of the dissolve effect", Float)= 0
 		_DisolveSize("Size of the effect", Float) = 2
-		_StartingY("Starting point of the effect", Float) = -10
+		_StartingY("Starting point of the effect", Float) = .04
 	}
 	SubShader
 	{
@@ -49,7 +49,7 @@
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-				o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+				o.worldPos = v.vertex.xyz;//mul(unity_ObjectToWorld, v.vertex).xyz;
 				return o;
 			}
 			
@@ -57,7 +57,6 @@
 			{
 				float transition = _DisolveY - i.worldPos.y;
 				clip(_StartingY + (transition + (tex2D(_DissolveTexture, i.uv)) * _DisolveSize));
-				
 				fixed4 col = tex2D(_MainTex, i.uv);
 				return col;
 			}

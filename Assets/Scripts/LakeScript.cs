@@ -8,25 +8,28 @@ public class LakeScript : MonoBehaviour {
     public float speed;
     public bool canMoveDown;
     public bool canMove;
+    public GameObject Holes;
 
     private Vector3 initalPos;
     private Vector3 bottomPos;
     private Vector3 target;
-    private float segment_distance;
+    public float segment_distance;
     private int num_of_goals;
 
     private UnityAction drop;
     private UnityAction raise;
     private UnityAction fall;
+    private UnityAction seg;
 
 	void Awake ()
     {
-        initalPos = new Vector3(-476, 89.4f, -1);
+        initalPos = transform.position;
         bottomPos = new Vector3(initalPos.x, .5f, initalPos.z);
         transform.position = initalPos;
         drop = new UnityAction(IsMovingDown);
         raise = new UnityAction(RaiseWaterLevel);
         fall = new UnityAction(LowerWaterLevel);
+        seg = new UnityAction(CalculateDistance);
 	}
 
     void OnEnable()
@@ -34,6 +37,7 @@ public class LakeScript : MonoBehaviour {
         EventManager.StartListening("StartLevel", drop);
         EventManager.StartListening("TurnOnALakeWaterfall", raise);
         EventManager.StartListening("TurnOffALakeWaterfall", fall);
+        EventManager.StartListening("CalculateSegment", seg);
     }
 
     void OnDisable()
@@ -41,15 +45,17 @@ public class LakeScript : MonoBehaviour {
         EventManager.StopListening("StartLevel", drop);
         EventManager.StopListening("TurnOnALakeWaterfall", raise);
         EventManager.StopListening("TurnOffALakeWaterfall", fall);
+        EventManager.StopListening("CalculateSegment", seg);
+
     }
     private void Start()
     {
-        num_of_goals = GameObject.FindGameObjectsWithTag("GoalHole").Length;
-        CalculateDistance();
+        
     }
     void CalculateDistance()
     {
         float d= Vector3.Distance(initalPos, bottomPos);
+        num_of_goals =Holes.GetComponentsInChildren<Transform>().Length;
         segment_distance = d / num_of_goals;
     }
     void Update()

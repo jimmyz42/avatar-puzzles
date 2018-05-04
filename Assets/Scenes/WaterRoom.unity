@@ -375,7 +375,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 200.7
+      value: 201
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalPosition.y
@@ -407,11 +407,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalScale.x
-      value: 386.7969
+      value: 422.5217
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalScale.z
-      value: 392.02756
+      value: 428.23532
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_Mesh
@@ -419,7 +419,7 @@ Prefab:
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.14748368
+      value: 0.1611053
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_IsActive
@@ -749,6 +749,7 @@ MonoBehaviour:
   speed: 5
   canMoveDown: 0
   canMove: 0
+  segment_distance: 0
 --- !u!4 &628554240 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
@@ -920,7 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc8f15c916290248abe2c20be7e7dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartDelay: 10
+  gameStartDelay: 3
 --- !u!114 &656339522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,7 +1691,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5000031
+      value: 89.4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1786,14 +1787,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adffe2ed82734436ba464687599f64be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneStartTimer: 0
+  sceneStartTimer: 5
   pipeTemplate: {fileID: 1958076032932958, guid: 11537aa2342617c40b733700a6a3810e,
     type: 2}
   holeTemplate: {fileID: 1239566929354590, guid: 22fb2d74859b30148b8be3436d682abf,
     type: 2}
   rockTemplate: {fileID: 1993147521011548, guid: 588b8ba9461cb2d42be56b37971b2b62,
     type: 2}
-  numPipes: 8
+  pipeSpeed: 100
+  numPipes: 9
   numRocks: 12
   minRockSize: 10
   maxRockSize: 50
