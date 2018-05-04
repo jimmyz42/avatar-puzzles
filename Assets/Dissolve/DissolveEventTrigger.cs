@@ -11,11 +11,12 @@ public class DissolveEventTrigger : MonoBehaviour {
 
     private void Awake()
     {
+        currentY = 0;
         disolveMaterial.SetFloat("_DisolveY", currentY);
     }
     private void Update()
     {
-        if (currentY < max)
+        if (currentY > max)
         {
             disolveMaterial.SetFloat("_DisolveY", currentY);
             currentY += Time.deltaTime * speed;

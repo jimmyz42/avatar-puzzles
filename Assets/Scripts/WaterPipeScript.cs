@@ -12,7 +12,7 @@ public class WaterPipeScript : MonoBehaviour {
     private GameObject pipe;
     private GameObject waterfall;
     private Vector3 shatter_offset;
-    public DissolveEventTrigger dissolver;
+   // public DissolveEventTrigger dissolver;
     private Quaternion pipe_rot;
 
 	private Init_Pipes manager;
@@ -24,10 +24,10 @@ public class WaterPipeScript : MonoBehaviour {
     {
         //Get all the parts of the pipe
         pipe = transform.GetChild(0).gameObject;
-        dissolver = pipe.GetComponentInChildren<DissolveEventTrigger>();
+       // dissolver = pipe.GetComponentInChildren<DissolveEventTrigger>();
         waterfall = transform.GetChild(1).gameObject;
         waterInpipe = transform.GetChild(2).gameObject;
-        shatter_offset = new Vector3(6, 5, 0);
+        shatter_offset = new Vector3(5.4f, 4.2f, 23.6f);
     }
 
     private void Start()
@@ -77,27 +77,33 @@ public class WaterPipeScript : MonoBehaviour {
 		
         waterInpipe.SetActive(false);
         waterfall.SetActive(false);
-        dissolver.max = 10;
-		dissolver.speed = -2.5f * 1.12f;
         Instantiate(shatter_template, transform.position-shatter_offset, pipe_rot);
+        pipe.SetActive(false);
+        transform.position = oriPos;
+        transform.rotation = oriRot;
+        //dissolver.max = 10;
+		//dissolver.speed = -2.5f * 1.12f;
+        
         StartCoroutine(BacktoStart());
     }
 
     //reactivates the water in the pipe and the spilling water from the pipe
     public void Restore()
     {
+        pipe.SetActive(true);
         waterInpipe.SetActive(true);
         waterfall.SetActive(true);
+        
     }
 
     //Returns the pipe to original position and restores the pipe to orginal look
     IEnumerator BacktoStart()
     {
-        yield return new WaitForSeconds(2.0f);
-        transform.position = oriPos;
-        transform.rotation = oriRot;
-        dissolver.Restore();
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(1.8f);
+        //transform.position = oriPos;
+        //transform.rotation = oriRot;
+        //dissolver.Restore();
+        //yield return new WaitForSeconds(.1f);
         Restore();
     }
 
