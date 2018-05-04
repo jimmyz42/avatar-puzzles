@@ -2359,6 +2359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oriPos: {x: 0, y: 0, z: 0}
+  oriRot: {x: 0, y: 0, z: 0, w: 0}
   shatter_template: {fileID: 1933480917537422, guid: 396a98b5e10dedf479616ba8130738ca,
     type: 2}
   dissolver: {fileID: 0}

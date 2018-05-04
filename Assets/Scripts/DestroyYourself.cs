@@ -7,7 +7,6 @@ public class DestroyYourself : MonoBehaviour {
     public float delay;
 	// Use this for initialization
 	void Start () {
-        delay = 4.3f;
         StartCoroutine(Suicide());
 	}
 	
@@ -18,7 +17,7 @@ public class DestroyYourself : MonoBehaviour {
 
     IEnumerator Suicide()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delay * 0.95f);
         Destroy(gameObject);
     }
 }
