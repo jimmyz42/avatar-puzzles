@@ -25,6 +25,8 @@ TagManager:
   - Explosion
   - GameMirror
   - StartLaser
+  - Fire
+  - Candle
   layers:
   - Default
   - TransparentFX

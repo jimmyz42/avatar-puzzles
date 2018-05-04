@@ -17,13 +17,18 @@ public class CandleController : MonoBehaviour {
         fire = gameObject.transform.GetChild(0).gameObject;
 	}
 
+
+    public void toggle()
+    {
+        OnMouseDown();
+    }
 	void OnMouseDown() {
 		// Select and Unselect are not needed for clicks
 		// They only exist because the OVR controller uses them
 		selectCandle ();
 		toggleCandle ();
 		unselectCandle ();
-	}
+	} 
 		
 	public void selectCandle() {
 		selectedCandle = this.gameObject;

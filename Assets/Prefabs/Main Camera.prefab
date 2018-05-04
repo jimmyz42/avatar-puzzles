@@ -36,15 +36,16 @@ GameObject:
   - component: {fileID: 4557139550722496}
   - component: {fileID: 20639549339763356}
   - component: {fileID: 124306883409038146}
-  - component: {fileID: 81552023571467444}
   - component: {fileID: 114890493707014158}
+  - component: {fileID: 136587240283528250}
+  - component: {fileID: 114655217931190108}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4557139550722496
 Transform:
   m_ObjectHideFlags: 1
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777462124451092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 148.8, z: -241.07}
+  m_LocalPosition: {x: -1, y: 162.1, z: -252.2}
   m_LocalScale: {x: 0.6741421, y: 0.67414206, z: 0.67414206}
   m_Children:
   - {fileID: 4667941249236296}
@@ -89,8 +90,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 25.6
+  far clip plane: 900
+  field of view: 16
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -108,13 +109,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &81552023571467444
-AudioListener:
+--- !u!114 &114655217931190108
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777462124451092}
-  m_Enabled: 1
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda9af737879580479cb4bf85fd5dcf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mycam: {fileID: 0}
 --- !u!114 &114890493707014158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,3 +141,16 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777462124451092}
   m_Enabled: 1
+--- !u!136 &136587240283528250
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777462124451092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 30
+  m_Height: 70
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
