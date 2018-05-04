@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 64366185394623584}
   - component: {fileID: 23205621998419542}
   - component: {fileID: 114120210703406660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Goalhole
   m_TagString: GoalHole
   m_Icon: {fileID: 0}
