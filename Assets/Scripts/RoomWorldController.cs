@@ -34,7 +34,7 @@ public class RoomWorldController : MonoBehaviour
         transitioning = false;
         insideSmoke = GetComponentInChildren<ParticleSystem>();
         gmc = GameObject.Find("GameManager").GetComponent<GameManagerController>();
-        if (gmc.world == this.name)
+        if (gmc.world == this.name && gmc.WasCompleted())
         {
          /*   explosion = GameObject.FindGameObjectWithTag("Explosion");
             galaxy = GameObject.FindGameObjectWithTag("EarthGalaxy");
@@ -87,27 +87,29 @@ public class RoomWorldController : MonoBehaviour
     void ReturnToPos()
     {
         if (transform.position != retPos)
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, retPos, speed * Time.deltaTime);
-        else
+        {
+            this.transform.position = Vector3.MoveTowards(gameObject.transform.position, retPos, speed * Time.deltaTime);
+        }
+        else if(gmc.WasCompleted())
         {
             StartCoroutine(GetGalaxyBadge());
-
+            gmc.ResetCompleted();
+        }
+        else
+        {
+            gmc.Returned();
         }
 
     }
     void TranstionSmoke()
     {
-        insideSmoke.startSize = 1000;
+        ParticleSystem.MainModule i = insideSmoke.main;
+        i.startSize = 1000;
     }
 
     void OnMouseDown()
     {
-        //if (gameObject.tag == "EarthWorld" || gameObject.tag=="AirWorld" || gameObject.tag=="FireWorld")
-        //{
-            isSelected = true;
-        //}
-
-        
+            isSelected = true;   
     }
 
     private void OnTriggerEnter(Collider other)

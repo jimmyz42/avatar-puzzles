@@ -10,6 +10,9 @@ public class GameManagerController : MonoBehaviour {
     private UnityAction fire;
     private UnityAction water;
     private UnityAction air;
+    private UnityAction finish;
+
+    public bool completed;
 
     public GameObject galaxy;
     public GameObject explosion;
@@ -38,6 +41,7 @@ public class GameManagerController : MonoBehaviour {
         fire = new UnityAction(FireSave);
         water = new UnityAction(WaterSave);
         air = new UnityAction(AirSave);
+        finish = new UnityAction(Completed);
 
     }
 
@@ -47,6 +51,7 @@ public class GameManagerController : MonoBehaviour {
         EventManager.StartListening("FireWorld", fire);
         EventManager.StartListening("WaterWorld", water);
         EventManager.StartListening("AirWorld", air);
+        EventManager.StartListening("CompletedWorld", finish);
     }
 
     void OnDisable()
@@ -55,6 +60,7 @@ public class GameManagerController : MonoBehaviour {
         EventManager.StopListening("FireWorld", fire);
         EventManager.StopListening("WaterWorld", water);
         EventManager.StopListening("AirWorld", air);
+        EventManager.StopListening("CompletedWorld", finish);
     }
 
     void EarthSave()
@@ -81,6 +87,25 @@ public class GameManagerController : MonoBehaviour {
         Saving();
     }
 
+    void Completed()
+    {
+        completed = true;
+    }
+
+    public void ResetCompleted()
+    {
+        completed = false;
+    }
+
+    public bool WasCompleted()
+    {
+        return completed;
+    }
+
+    public void Returned()
+    {
+        isReturning = false;
+    }
     void Saving()
     {
         selectedWorld = GameObject.Find(world);
@@ -109,7 +134,6 @@ public class GameManagerController : MonoBehaviour {
         selectedWorld.transform.position = savedWorldPlaced;
         rmc = selectedWorld.GetComponent<RoomWorldController>();
         rmc.SetReturn(returnWorldPos, delayForGalaxy);
-
         rmc.transitioning = true;
     }
 }

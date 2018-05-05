@@ -104,6 +104,7 @@ public class Init_Rocks : MonoBehaviour {
 	public void onGameWin()
     {
 
+        EventManager.TriggerEvent("CompletedWorld");
         StartCoroutine(EndTheGame());
 		// TODO Brianna
 	}
