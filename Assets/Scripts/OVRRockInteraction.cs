@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace RockInteractionNameSpace
 {
-    public class OVRRockInteraction : MonoBehaviour
+	public class OVRRockInteraction : OVRInteractable
     {
 
         protected Material oldHoverMat;
@@ -21,34 +21,39 @@ namespace RockInteractionNameSpace
         private enum DIRECTION { LEFT, RIGHT, UP, DOWN, FRONT, BACK, NONE };
         private InteractableRockController controller;
 
-        public void OnHoverEnter(Transform t)
+        new public void OnHoverEnter(Transform t)
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-                // highlight rock
-                oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
+                if (numPressed < 1)
+                {
+                    // highlight rock if no rock is selected
+                    oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
                 if (yellowMat != null) { t.gameObject.GetComponent<Renderer>().material = yellowMat;}
+                }
             }
         }
 
-        public void OnHoverExit(Transform t)
+        new public void OnHoverExit(Transform t)
         {
-
             if (t.gameObject.tag == "Movable_Rock")
             {
-                t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
+                if (numPressed < 1)
+                {
+                    // if just moving over rocks, will unhighlight 
+                    t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
+                }
             }
         }
 
-        public void OnSelect(Transform t)
+        public new void OnSelect(Transform t)
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
+                // says you are pressing, saves positions of controllers to determine movement
                 numPressed++;
-
                 if (numPressed == 1)
                 {
-                    //t.gameObject.GetComponent<InteractableRockController>().selectRock();
                     controller = t.gameObject.GetComponent<InteractableRockController>();
                     StoreHandPositions();
                 }
@@ -58,18 +63,18 @@ namespace RockInteractionNameSpace
         }
 
 
-        public void OnDeselect(Transform t)
+        new public void OnDeselect(Transform t)
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-
+                // Unhighlights the rock and releases control of it
                 numPressed--;
-
                 if (numPressed == 0)
                 {
                     t.gameObject.GetComponent<InteractableRockController>().unselectRock();
                     controller = null;
                 }
+                t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
             }
         }
 

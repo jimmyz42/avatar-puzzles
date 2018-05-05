@@ -594,6 +594,30 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 936923984}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
   m_IsPrefabParent: 0
@@ -1450,6 +1474,15 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 936923984}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
   m_IsPrefabParent: 0
@@ -1839,6 +1872,15 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 936923984}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
   m_IsPrefabParent: 0
@@ -2053,6 +2095,15 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 936923984}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
   m_IsPrefabParent: 0
@@ -2493,6 +2544,27 @@ Transform:
   m_PrefabParentObject: {fileID: 4871098583056034, guid: 02e59df533a338e4e8a7b7c6404f7ebb,
     type: 2}
   m_PrefabInternal: {fileID: 1695446615}
+--- !u!1 &1726268306 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+    type: 2}
+  m_PrefabInternal: {fileID: 1217825384}
+--- !u!114 &1726268312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726268306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5e8541ded21a04c96457eafae0d3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  speed: 10
+  audioSource: {fileID: 0}
+  slidingSFX: {fileID: 0}
+  collisionSFX: {fileID: 0}
 --- !u!1001 &1740298153
 Prefab:
   m_ObjectHideFlags: 0
@@ -2638,6 +2710,15 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 936923984}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
   m_IsPrefabParent: 0
@@ -2694,6 +2775,15 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 936923984}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
   m_IsPrefabParent: 0
@@ -2956,6 +3046,15 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 936923984}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
   m_IsPrefabParent: 0
@@ -3116,6 +3215,10 @@ Prefab:
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.6741421
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
@@ -3321,6 +3424,15 @@ Prefab:
         type: 2}
       propertyPath: timer
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173279721828370, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}
+      propertyPath: m_TagString
+      value: Movable_Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 135351554222050278, guid: 8a0d3c8f9f231bb4a987b507035aea65,
+        type: 2}
+      propertyPath: m_Radius
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a0d3c8f9f231bb4a987b507035aea65, type: 2}

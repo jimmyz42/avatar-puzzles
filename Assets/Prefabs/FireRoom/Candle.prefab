@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 136243267584920826}
   m_Layer: 0
   m_Name: Candle
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -495,8 +495,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnFireOn: 0
+<<<<<<< HEAD:Assets/Prefabs/FireRoom/Candle.prefab
   TurnFireRed: 0
   riseSpeed: 2
+=======
+>>>>>>> abilitiesTest:Assets/Prefabs/Candle.prefab
 --- !u!114 &114554169016186644
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -42,13 +42,18 @@ public class CandleController : MonoBehaviour {
 
     }
 
+
+    public void toggle()
+    {
+        OnMouseDown();
+    }
 	void OnMouseDown() {
         // Select and Unselect are not needed for clicks
         // They only exist because the OVR controller uses thems
 		selectCandle ();
 		toggleCandle ();
 		unselectCandle ();
-	}
+	} 
 		
 	public void selectCandle() {
 		selectedCandle = this.gameObject;

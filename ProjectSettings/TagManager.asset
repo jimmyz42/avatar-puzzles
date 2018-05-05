@@ -25,9 +25,14 @@ TagManager:
   - Explosion
   - GameMirror
   - StartLaser
+<<<<<<< HEAD
   - RockPillar
   - WaterPipe
   - GoalHole
+=======
+  - Fire
+  - Candle
+>>>>>>> abilitiesTest
   layers:
   - Default
   - TransparentFX

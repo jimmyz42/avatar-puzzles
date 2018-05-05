@@ -75,6 +75,9 @@ namespace ControllerSelection {
 
         public void SetPointerVisibility() {
             if (trackingSpace != null && activeController != OVRInput.Controller.None) {
+				if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, activeController)) {
+						linePointer.enabled = false;
+				}
                 if (linePointer != null) {
                     linePointer.enabled = true;
                 }

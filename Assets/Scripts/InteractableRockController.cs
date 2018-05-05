@@ -93,8 +93,8 @@ public class InteractableRockController : MonoBehaviour {
 	public void selectRock() {
 		selectedRock = gameObject;
 		Vector3 temp = selectedRock.transform.position;
-		temp.y = 25;
-		selectedRock.transform.position = temp;
+		temp.y = 35;
+        selectedRock.transform.position = temp;
 	}
 
 	public void unselectRock() {
