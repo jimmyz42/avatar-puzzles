@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FireRoom.unity
     guid: 6e1c6d28ccc695142a3435d88f15ae4d
+  - enabled: 1
+    path: Assets/Scenes/WaterRoom.unity
+    guid: a2037723740df574f886c7f035b79228

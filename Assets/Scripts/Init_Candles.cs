@@ -113,6 +113,7 @@ public class Init_Candles : MonoBehaviour {
 	public void onGameWin()
     {
         // TODO Brianna
+        EventManager.TriggerEvent("CompletedWorld");
         EventManager.TriggerEvent("TurnTheFlamesRed");
         EventManager.TriggerEvent("StartTheSmoke");
     }
