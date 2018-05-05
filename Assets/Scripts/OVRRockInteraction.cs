@@ -25,11 +25,9 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-                Debug.Log(numPressed);
                 if (numPressed < 1)
                 {
-                    // Debug.Log(numPressed);
-                    // highlight rock
+                    // highlight rock if no rock is selected
                     oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
                 if (yellowMat != null) { t.gameObject.GetComponent<Renderer>().material = yellowMat;}
                 }
@@ -42,6 +40,7 @@ namespace RockInteractionNameSpace
             {
                 if (numPressed < 1)
                 {
+                    // if just moving over rocks, will unhighlight 
                     t.gameObject.GetComponent<Renderer>().material = oldHoverMat;
                 }
             }
@@ -51,13 +50,10 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-                //oldHoverMat = t.gameObject.GetComponent<Renderer>().material;
-                //if (yellowMat != null) { t.gameObject.GetComponent<Renderer>().material = yellowMat; }
+                // says you are pressing, saves positions of controllers to determine movement
                 numPressed++;
-                Debug.Log("numPressed Up");
                 if (numPressed == 1)
                 {
-                    //t.gameObject.GetComponent<InteractableRockController>().selectRock();
                     controller = t.gameObject.GetComponent<InteractableRockController>();
                     StoreHandPositions();
                 }
@@ -71,7 +67,7 @@ namespace RockInteractionNameSpace
         {
             if (t.gameObject.tag == "Movable_Rock")
             {
-                Debug.Log("numPressed Down");
+                // Unhighlights the rock and releases control of it
                 numPressed--;
                 if (numPressed == 0)
                 {

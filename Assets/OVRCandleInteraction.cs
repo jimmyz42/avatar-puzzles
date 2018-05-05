@@ -11,6 +11,9 @@ public class OVRCandleInteraction : OVRInteractable {
     private enum DIRECTION { LEFT, RIGHT, UP, DOWN, FRONT, BACK, NONE };
     private CandleController controller;
 
+    protected Material oldHoverMat;
+    public Material yellowMat;
+
     public new void OnSelect(Transform t)
     {
         if (t.gameObject.tag == "Candle")
@@ -22,11 +25,8 @@ public class OVRCandleInteraction : OVRInteractable {
                 controller = t.gameObject.GetComponent<CandleController>();
                 StoreHandPositions();
             }
-
-
         }
     }
-
 
 
     protected void StoreHandPositions()
@@ -37,7 +37,8 @@ public class OVRCandleInteraction : OVRInteractable {
 
     protected Vector3 GetLeftHandPos()
     {
-        return OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTrackedRemote);
+        return 
+             OVRCandleInteraction`tbu5rgOVRInput.Controller.LTrackedRemote);
     }
 
     protected Vector3 GetRightHandPos()
@@ -103,22 +104,11 @@ public class OVRCandleInteraction : OVRInteractable {
         {
             return DIRECTION.DOWN;
         }
-        else if (Vector3.Angle(v, Vector3.forward) < maxAngle)
-        {
+        //else if (Vector3.Angle(v, Vector3.forward) < maxAngle)
+        //{
             return DIRECTION.FRONT;
-        }
-        else if (Vector3.Angle(v, Vector3.back) < maxAngle)
-        {
-            return DIRECTION.BACK;
-        }
-        else if (Vector3.Angle(v, Vector3.left) < maxAngle)
-        {
-            return DIRECTION.LEFT;
-        }
-        else if (Vector3.Angle(v, Vector3.right) < maxAngle)
-        {
-            return DIRECTION.RIGHT;
-        }
+        //}
+        
         return DIRECTION.NONE;
     }
 }
