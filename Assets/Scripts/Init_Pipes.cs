@@ -200,6 +200,7 @@ public class Init_Pipes : MonoBehaviour {
 	public void onGameWin()
 	{
         EventManager.TriggerEvent("CompletedWorld");
-        // TODO Brianna
+        EventManager.TriggerEvent("EndLevel");
+        
     }
 }

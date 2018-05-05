@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class RoomWorldController : MonoBehaviour
 {
     private UnityAction someListener;
+    private UnityAction gal;
 
     public GameObject galaxy;
     public GameObject explosion;
@@ -19,8 +20,32 @@ public class RoomWorldController : MonoBehaviour
     public string connectedWorld;
     public ParticleSystem insideSmoke;
     public float delay;
-    
-    
+
+    private void Awake()
+    { 
+        galaxy.SetActive(false);
+        isSelected = false;
+        transitioning = false;
+        insideSmoke = GetComponentInChildren<ParticleSystem>();
+        gmc = GameObject.Find("GameManager").GetComponent<GameManagerController>();
+        gal = new UnityAction(GetBadge);   
+    }
+
+    private void OnEnable()
+    {
+        EventManager.StartListening(name + "Galaxy", gal);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.StopListening(name + "Galaxy", gal);
+    }
+
+    void GetBadge()
+    {
+        galaxy.SetActive(true);
+        Destroy(gameObject);
+    }
     public void SetReturn(Vector3 pos, float d)
     {
         retPos = pos;
@@ -28,12 +53,10 @@ public class RoomWorldController : MonoBehaviour
         
 
     }
+    
     void Start ()
     {
-        isSelected = false;
-        transitioning = false;
-        insideSmoke = GetComponentInChildren<ParticleSystem>();
-        gmc = GameObject.Find("GameManager").GetComponent<GameManagerController>();
+        
         if (gmc.world == this.name && gmc.WasCompleted())
         {
          /*   explosion = GameObject.FindGameObjectWithTag("Explosion");
@@ -98,6 +121,7 @@ public class RoomWorldController : MonoBehaviour
         else
         {
             gmc.Returned();
+            transitioning = false;
         }
 
     }
@@ -131,15 +155,14 @@ public class RoomWorldController : MonoBehaviour
 
     }
 
+
     public IEnumerator GetGalaxyBadge()
     {
         explosion=Instantiate(Resources.Load("WorldExplosion")) as GameObject;
-        Instantiate(explosion);
-        //explosion.SetActive(true);
+        Instantiate(explosion, transform.position, transform.rotation);
         yield return new WaitForSeconds(delay);
-        galaxy= Instantiate(Resources.Load("EarthGalaxy")) as GameObject;
-        Instantiate(galaxy);
-        //galaxy.SetActive(true);
+        galaxy.SetActive(true);
+        EventManager.TriggerEvent(name + "Destroyed");
         Destroy(gameObject);
 
     }
