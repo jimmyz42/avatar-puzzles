@@ -48,7 +48,7 @@ public class Init_Candles : MonoBehaviour {
 			float r = lowerBound * Mathf.Pow (upperBound / lowerBound, (i + 1.0f) / (rows + 1.0f));
 			for (int j = 0; j < cols; j++) {
 				float angle = Mathf.PI*2 * j/cols;
-				Vector3 pos = new Vector3 (r * Mathf.Cos (angle), .07f,  r * Mathf.Sin (angle));
+				Vector3 pos = new Vector3 (r * Mathf.Cos (angle), -2.07f,  r * Mathf.Sin (angle));
 				GameObject candle = Instantiate(candleTemplate, pos, Quaternion.identity, gameObject.transform);
 				CandleController control = candle.GetComponent<CandleController> ();
 				control.setManager (this);

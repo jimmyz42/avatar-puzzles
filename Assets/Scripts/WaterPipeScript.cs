@@ -7,6 +7,7 @@ public class WaterPipeScript : MonoBehaviour {
     public Vector3 oriPos;
     public Quaternion oriRot;
     public GameObject shatter_template;
+	public float riseSpeed = 20; // for beginning appear
 
     private GameObject waterInpipe;
     private GameObject pipe;
@@ -19,6 +20,7 @@ public class WaterPipeScript : MonoBehaviour {
 	int num;
 	private float z_limit = float.MaxValue;
 	private Vector3 velocity = Vector3.zero; // kinematic rigidbodies don't support velocity :(
+	private bool startAnimation = true;
 
     private void Awake()
     {
@@ -32,13 +34,24 @@ public class WaterPipeScript : MonoBehaviour {
 
     private void Start()
     {
-        //Get the starting posistion so it knows what to return too
-        oriPos = transform.position;
-        oriRot = transform.rotation;
     }
 
     private void Update()
     {
+		if (startAnimation) {
+			if (transform.position.z > 443) {
+				float newZ = Mathf.Max (443f, gameObject.transform.position.z - riseSpeed * Time.deltaTime);
+				Vector3 target = gameObject.transform.position;
+				target.z = newZ;
+				gameObject.transform.position = target;
+			} else {
+				startAnimation = false;
+				//Get the starting posistion so it knows what to return to
+				oriPos = transform.position;
+				oriRot = transform.rotation;
+			}
+			return;
+		}
 		transform.position += velocity * Time.deltaTime;
 		if (transform.position.z >= z_limit) { // used for moving back
 			z_limit = float.MaxValue;
