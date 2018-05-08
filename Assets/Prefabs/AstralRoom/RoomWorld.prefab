@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23497295535469224}
   - component: {fileID: 54904871438897914}
   - component: {fileID: 114316294904386102}
+  - component: {fileID: 114118069270199740}
   m_Layer: 0
   m_Name: RoomWorld
   m_TagString: EarthWorld
@@ -131,6 +132,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114118069270199740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1103293303748908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e00c3d4a613b441a67449fa0db257d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreviewShown: 0
+  previewTime: 5
+  sceneNum: 0
 --- !u!114 &114316294904386102
 MonoBehaviour:
   m_ObjectHideFlags: 1
