@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2017.4.2f2
 =======
 m_EditorVersion: 2017.4.1f1
 >>>>>>> abilitiesTest
+=======
+m_EditorVersion: 2017.3.0f3
+>>>>>>> 35219a5b059a034e36ff84f778d19309a06ccfe2
