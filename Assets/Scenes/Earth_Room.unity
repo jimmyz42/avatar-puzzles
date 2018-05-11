@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 762f22ba43541df4e95e0e7126e8d96c, type: 3}
   m_Sun: {fileID: 10066782}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.22501037, g: 0.21835366, b: 0.27176115, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 135970492}
   - component: {fileID: 135970491}
   - component: {fileID: 135970494}
+  - component: {fileID: 135970495}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Finish
@@ -303,6 +304,19 @@ MonoBehaviour:
   doorDelay: 5
   exitDelay: 1.2
   ending: 0
+--- !u!114 &135970495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135970489}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f079147f055f92147894aed48a6e905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: bb64576e91f46d2448a4ec3d966b1c5a, type: 3}
+  fadeSpeed: 0.8
 --- !u!1 &219373814
 GameObject:
   m_ObjectHideFlags: 0
