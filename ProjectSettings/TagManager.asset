@@ -4,35 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Movable_Rock
-  - Falling_Rock
-  - BlackFloor
-  - Floor
-  - Rotating_Rock
-  - EarthWorld
-  - EndEffect
-  - EndFloor
-  - DiffFloor
-  - Second_Floor
-  - StartFloor
-  - Leaves
-  - TwirlAnchor
-  - GameLeaf
-  - TwirlLeaves
-  - LeafFloor
-  - Mirror
-  - EarthGalaxy
-  - Explosion
-  - GameMirror
-  - StartLaser
-<<<<<<< HEAD
-  - RockPillar
   - WaterPipe
+  - GameMirror
+  - Mirror
   - GoalHole
-=======
-  - Fire
-  - Candle
->>>>>>> abilitiesTest
+  - RockPillar
+  - EarthGalaxy
+  - Leaves
   layers:
   - Default
   - TransparentFX
@@ -42,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - Mirror
+  - 
   - 
   - 
   - 
