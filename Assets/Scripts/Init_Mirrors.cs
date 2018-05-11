@@ -195,8 +195,7 @@ public class Init_Mirrors : MonoBehaviour {
 
 	public void onGameWin()
     {
-        //Debug.Log("Ending game");
-        EventManager.TriggerEvent("CompletedWorld");
+        Debug.Log("Ending game");
         StartCoroutine(EndGame());
 		// TODO Brianna, make the doors open, or the walls sink, or something
 	}

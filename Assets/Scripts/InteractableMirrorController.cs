@@ -73,8 +73,8 @@ public class InteractableMirrorController : MonoBehaviour {
 
 	public void selectMirror() {
 		selectedMirror = gameObject;
-		// TODO Art Team (show mirror selected?)
-	}
+        // TODO Art Team (show mirror selected?)
+    }
 
 	public void unselectMirror() {
 		if (selectedMirror != null) {
