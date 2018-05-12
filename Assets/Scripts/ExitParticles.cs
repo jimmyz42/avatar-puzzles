@@ -54,7 +54,7 @@ public class ExitParticles : MonoBehaviour {
 
     public void StartSmoke()
     {
-
+       
         StartCoroutine(Exiting());
     }
 
@@ -62,6 +62,12 @@ public class ExitParticles : MonoBehaviour {
     {
         exit.SetActive(true);
         yield return new WaitForSeconds(finalExitDelay);
+        GameObject gmc = GameObject.Find("GameManager");
+        if (gmc != null)
+        {
+            float fadeTime = gmc.GetComponent<FadeIn>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
+        }    
         SceneManager.LoadScene("AstralRoom");
     }
 }

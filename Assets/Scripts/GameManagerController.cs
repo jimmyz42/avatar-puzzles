@@ -52,6 +52,7 @@ public class GameManagerController : MonoBehaviour {
         fg = new UnityAction(ReplaceFire);
         wg = new UnityAction(ReplaceWater);
         ag = new UnityAction(ReplaceAir);
+        //SceneManager.LoadScene(5, LoadSceneMode.Additive);
 
     }
 

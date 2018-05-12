@@ -53,6 +53,12 @@ public class WaterRoomExitScript : MonoBehaviour {
         yield return new WaitForSeconds(smokeDelay);
         smoke.SetActive(true);
         yield return new WaitForSeconds(exitDelay);
+        GameObject gmc = GameObject.Find("GameManager");
+        if (gmc != null)
+        {
+            float fadeTime = gmc.GetComponent<FadeIn>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
+        }
         SceneManager.LoadScene("AstralRoom");
     }
 }

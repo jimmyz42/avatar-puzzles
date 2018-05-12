@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WaterRoom.unity
     guid: a2037723740df574f886c7f035b79228
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: a19278f4339ba594ba8fc3a6eb072362

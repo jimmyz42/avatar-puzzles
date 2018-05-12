@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
+
 
 public class Init_Mirrors : MonoBehaviour {
 
@@ -196,6 +196,7 @@ public class Init_Mirrors : MonoBehaviour {
 	public void onGameWin()
     {
         Debug.Log("Ending game");
+        EventManager.TriggerEvent("CompletedWorld");
         StartCoroutine(EndGame());
 		// TODO Brianna, make the doors open, or the walls sink, or something
 	}

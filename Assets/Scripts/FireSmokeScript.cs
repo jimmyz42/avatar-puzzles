@@ -63,6 +63,12 @@ public class FireSmokeScript : MonoBehaviour {
         Surround();
         ChangingSize();
         yield return new WaitForSeconds(delay+2f);
+        GameObject gmc = GameObject.Find("GameManager");
+        if (gmc != null)
+        {
+            float fadeTime = gmc.GetComponent<FadeIn>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
+        }   
         Return();
 
 

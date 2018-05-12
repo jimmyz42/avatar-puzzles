@@ -150,7 +150,9 @@ public class RoomWorldController : MonoBehaviour
 
     public IEnumerator EnteringTheWorld()
     {
-        yield return new WaitForSeconds(timer);
+        float fadeTime = gmc.GetComponent<FadeIn>().BeginFade(1);
+        //yield return new WaitForSeconds(timer);
+        yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene(connectedWorld);
 
     }

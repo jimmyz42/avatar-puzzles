@@ -56,7 +56,13 @@ public class DoorController : MonoBehaviour {
     {
         exitSmoke.SetActive(true);
         exit.Play();
+        GameObject gmc = GameObject.Find("GameManager");
         yield return new WaitForSeconds(exitDelay);
+        if (gmc != null)
+        {
+            float fadeTime = gmc.GetComponent<FadeIn>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
+        }
         SceneManager.LoadScene("AstralRoom");
     }
 
