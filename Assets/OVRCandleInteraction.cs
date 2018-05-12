@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Mathf;
+
 
 public class OVRCandleInteraction : OVRInteractable {
     protected int numPressed;
     protected Vector3 leftStartPos;
     protected Vector3 rightStartPos;
+    protected Vector3 hitPoint;
     protected float minDist = 0.02f;
     protected float maxAngle = 45.0f;
     private enum DIRECTION { LEFT, RIGHT, UP, DOWN, FRONT, BACK, NONE };
     private CandleController controller;
 
-    protected Material oldHoverMat;
-    public Material yellowMat;
+    public float multiplier = 1.4F;
 
     public new void OnSelect(Transform t)
     {
@@ -24,6 +26,7 @@ public class OVRCandleInteraction : OVRInteractable {
             {
                 controller = t.gameObject.GetComponent<CandleController>();
                 StoreHandPositions();
+                hitPoint = t.position;
             }
         }
     }
@@ -37,8 +40,7 @@ public class OVRCandleInteraction : OVRInteractable {
 
     protected Vector3 GetLeftHandPos()
     {
-        return 
-             OVRCandleInteraction`tbu5rgOVRInput.Controller.LTrackedRemote);
+        return OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTrackedRemote);
     }
 
     protected Vector3 GetRightHandPos()
@@ -62,10 +64,10 @@ public class OVRCandleInteraction : OVRInteractable {
             if (leftDistance > minDist || rightDistance > minDist)
             {
 
-                DIRECTION leftDir = getDirection(leftHandPos - leftStartPos);
-                DIRECTION rightDir = getDirection(rightHandPos - rightStartPos);
+                DIRECTION leftDir = getDirection(leftStartPos, leftHandPos);
+                DIRECTION rightDir = getDirection(rightStartPos, rightHandPos);
 
-                if (leftDir >= rightDir)
+                if (leftDistance >= rightDistance)
                 {
                     handleBending(leftDir);
                     numPressed = 0;
@@ -93,22 +95,47 @@ public class OVRCandleInteraction : OVRInteractable {
         }
     }
 
-    DIRECTION getDirection(Vector3 v)
+    DIRECTION getDirection(Vector3 s, Vector3 e)
     {
 
-        if (Vector3.Angle(v, Vector3.up) < maxAngle)
+        if (Vector3.Angle(e-s, Vector3.up) < maxAngle)
         {
             return DIRECTION.UP;
         }
-        else if (Vector3.Angle(v, Vector3.down) < maxAngle)
+        else if (Vector3.Angle(e-s, Vector3.down) < maxAngle)
         {
             return DIRECTION.DOWN;
         }
         //else if (Vector3.Angle(v, Vector3.forward) < maxAngle)
         //{
-            return DIRECTION.FRONT;
+        return getPunch(s, e);
         //}
         
+        //return DIRECTION.NONE;
+    }
+
+    DIRECTION getPunch(Vector3 t, Vector3 c)
+    {
+        //will return DIRECTION.FRONT if punch detected
+        //will return DIRECTION.NONE by default
+        // hitpoint is the other vector used. It is assigned on select
+        // multiplier used for math. Public to change/test
+        Vector3 f = hitPoint;
+        //distance from start to end hand
+
+        float tc = Mathf.Sqrt(Mathf.Pow(t.x - c.x, 2F) + Mathf.Pow(t.y-c.y, 2F) + Mathf.Pow(t.z - c.z, 2F));
+
+        //distance from end to candle
+        double cf = Mathf.Sqrt(Mathf.Pow(c.x - f.x, 2F) + Mathf.Pow(c.y - f.y, 2F) + Mathf.Pow(c.z - f.z, 2F)); ;
+
+        //distance from start to candle
+        double tf = Mathf.Sqrt(Mathf.Pow(t.x - f.x, 2F) + Mathf.Pow(t.y - f.y, 2F) + Mathf.Pow(t.z - f.z, 2F)); ;
+
+        if ((tc + cf) >= (multiplier * tf))
+        {
+            return DIRECTION.FRONT;
+        }
+
         return DIRECTION.NONE;
     }
 }
