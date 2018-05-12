@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Mathf;
+
 
 
 public class OVRCandleInteraction : OVRInteractable {
@@ -9,7 +9,7 @@ public class OVRCandleInteraction : OVRInteractable {
     protected Vector3 leftStartPos;
     protected Vector3 rightStartPos;
     protected Vector3 hitPoint;
-    protected float minDist = 0.02f;
+    protected float minDist = 0.15f;
     protected float maxAngle = 45.0f;
     private enum DIRECTION { LEFT, RIGHT, UP, DOWN, FRONT, BACK, NONE };
     private CandleController controller;
@@ -64,16 +64,15 @@ public class OVRCandleInteraction : OVRInteractable {
             if (leftDistance > minDist || rightDistance > minDist)
             {
 
-                DIRECTION leftDir = getDirection(leftStartPos, leftHandPos);
-                DIRECTION rightDir = getDirection(rightStartPos, rightHandPos);
-
                 if (leftDistance >= rightDistance)
                 {
+                    DIRECTION leftDir = getDirection(leftStartPos, leftHandPos);
                     handleBending(leftDir);
                     numPressed = 0;
                 }
                 else
                 {
+                    DIRECTION rightDir = getDirection(rightStartPos, rightHandPos);
                     handleBending(rightDir);
                     numPressed = 0;
                 }
@@ -97,23 +96,47 @@ public class OVRCandleInteraction : OVRInteractable {
 
     DIRECTION getDirection(Vector3 s, Vector3 e)
     {
-
-        if (Vector3.Angle(e-s, Vector3.up) < maxAngle)
+        Vector3 v = e - s;
+        /*if (Vector3.Angle(v, Vector3.up) < maxAngle)
         {
             return DIRECTION.UP;
         }
-        else if (Vector3.Angle(e-s, Vector3.down) < maxAngle)
+        if (Vector3.Angle(v, Vector3.down) < maxAngle)
         {
             return DIRECTION.DOWN;
         }
+        if (Vector3.Angle(v, Vector3.left) < maxAngle)
+        {
+            return DIRECTION.LEFT;
+        }
+        if (Vector3.Angle(v, Vector3.right) < maxAngle)
+        {
+            return DIRECTION.RIGHT;
+        }*/
         //else if (Vector3.Angle(v, Vector3.forward) < maxAngle)
         //{
-        return getPunch(s, e);
-        //}
-        
-        //return DIRECTION.NONE;
-    }
 
+        /*if (Vector3.Angle(e, s) < 4.0F)
+        {
+            Debug.Log("Angle Used " + Vector3.Angle(e, s));
+            return DIRECTION.FRONT;
+            
+        }*/
+        if (Mathf.Abs(Vector3.Angle(hitPoint, s) - Vector3.Angle(e, hitPoint)) < 10F)
+        {
+            Debug.Log("Angle Used " + Vector3.Angle(e, s));
+            return DIRECTION.FRONT;
+
+        }
+
+        //return getPunch(s, e);
+        //}
+
+        return DIRECTION.NONE;
+    }
+    
+
+    //This function is not working becuase the candles and hands are in different coordinate spaces
     DIRECTION getPunch(Vector3 t, Vector3 c)
     {
         //will return DIRECTION.FRONT if punch detected
@@ -121,17 +144,23 @@ public class OVRCandleInteraction : OVRInteractable {
         // hitpoint is the other vector used. It is assigned on select
         // multiplier used for math. Public to change/test
         Vector3 f = hitPoint;
+
         //distance from start to end hand
+        Debug.Log("Candle point, f " + f + " start point, t " + t + " current point, c " + c);
+
 
         float tc = Mathf.Sqrt(Mathf.Pow(t.x - c.x, 2F) + Mathf.Pow(t.y-c.y, 2F) + Mathf.Pow(t.z - c.z, 2F));
+        Debug.Log("tc " + tc);
 
         //distance from end to candle
-        double cf = Mathf.Sqrt(Mathf.Pow(c.x - f.x, 2F) + Mathf.Pow(c.y - f.y, 2F) + Mathf.Pow(c.z - f.z, 2F)); ;
+        double cf = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(c.x) - Mathf.Abs(f.x), 2F) + Mathf.Pow(Mathf.Abs(c.y) - Mathf.Abs(f.y), 2F) + Mathf.Pow(Mathf.Abs(c.z) - Mathf.Abs(f.z), 2F));
+        Debug.Log("cf " + cf);
 
         //distance from start to candle
-        double tf = Mathf.Sqrt(Mathf.Pow(t.x - f.x, 2F) + Mathf.Pow(t.y - f.y, 2F) + Mathf.Pow(t.z - f.z, 2F)); ;
+        double tf = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(t.x) - Mathf.Abs(f.x), 2F) + Mathf.Pow(Mathf.Abs(t.y) - Mathf.Abs(f.y), 2F) + Mathf.Pow(Mathf.Abs(t.z) - Mathf.Abs(f.z), 2F));
+        Debug.Log("tf " + tf);
 
-        if ((tc + cf) >= (multiplier * tf))
+        if (tf > cf && (tc + cf) <= (multiplier * tf))
         {
             return DIRECTION.FRONT;
         }
