@@ -24,11 +24,11 @@ public class Init_Candles : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Turn_Fire_Off)
+/*        if (Turn_Fire_Off)
         {
             TurnOffAllTheFires();
             Turn_Fire_Off = false;
-        }
+        }*/
         if (canWin && (checkWinCondition () || PlayEndGame)) {
 			onGameWin ();
 		}
