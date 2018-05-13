@@ -12,6 +12,7 @@ public class Init_Candles : MonoBehaviour {
 	private GameObject[,] candles;
     public bool canWin;
 
+    public bool Turn_Fire_Off;
 	public bool PlayEndGame;
 
 
@@ -23,6 +24,11 @@ public class Init_Candles : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Turn_Fire_Off)
+        {
+            TurnOffAllTheFires();
+            Turn_Fire_Off = false;
+        }
         if (canWin && (checkWinCondition () || PlayEndGame)) {
 			onGameWin ();
 		}
@@ -105,6 +111,10 @@ public class Init_Candles : MonoBehaviour {
 		return true;
 	}
 
+    public void TurnOffAllTheFires()
+    {
+        EventManager.TriggerEvent("TurnOffTheCandles");
+    }
     IEnumerator CheckForWin()
     {
         yield return new WaitForSeconds(sceneStartTimer + 2f);
