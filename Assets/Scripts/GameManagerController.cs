@@ -159,7 +159,9 @@ public class GameManagerController : MonoBehaviour {
             if ( world != null && GameObject.Find(world) != null)
             {
                 //canPlayVid = false;
+                AudioSource aud = GameObject.Find("OSTAudio").GetComponent<AudioSource>();
                 Destroy(video);
+                aud.Play();
                 isReturning = true;
                 ReloadWorld();
 
