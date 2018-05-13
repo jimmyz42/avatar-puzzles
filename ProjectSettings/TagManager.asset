@@ -28,6 +28,8 @@ TagManager:
   - RockPillar
   - WaterPipe
   - GoalHole
+  - Fire
+  - Candle
   layers:
   - Default
   - TransparentFX

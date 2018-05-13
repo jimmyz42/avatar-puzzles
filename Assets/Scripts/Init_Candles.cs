@@ -86,7 +86,7 @@ public class Init_Candles : MonoBehaviour {
 		return numToggle >= minToggle && !checkWinCondition ();
 	}
 
-	private void setCandleConfig(bool on) {
+	public void setCandleConfig(bool on) {
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < cols; j++) {
 				candles [i, j].GetComponent<CandleController> ().PutFireOn (on);
