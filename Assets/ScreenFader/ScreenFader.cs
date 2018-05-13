@@ -22,7 +22,10 @@ public class ScreenFader : MonoBehaviour
         foreach (ScreenFadeControl fadeControl in fadeControls)
             fadeControl.enabled = value;
     }
-
+    public void TurnFadeOff(bool t)
+    {
+        fadeIn = t;
+    }
     public IEnumerator FadeOut()
     {
         if (!faded)
@@ -69,7 +72,10 @@ public class ScreenFader : MonoBehaviour
             StartCoroutine(DoFade());
         }
     }
-    
+    private void OnLevelWasLoaded(int level)
+    {
+        TurnFadeOff(true);
+    }
     public IEnumerator DoFade()
     {
         // Clean up from last fade

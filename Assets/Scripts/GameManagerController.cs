@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class GameManagerController : MonoBehaviour {
 
@@ -30,6 +31,9 @@ public class GameManagerController : MonoBehaviour {
     public bool isReturning;
     public RoomWorldController rmc;
     public float delayForGalaxy;
+    public GameObject video;
+
+    private bool canPlayVid;
 
     void Awake()
     {
@@ -37,6 +41,7 @@ public class GameManagerController : MonoBehaviour {
         Scene sn = SceneManager.GetActiveScene();
         astralScene = sn.name;
 
+        canPlayVid = true;
         if (FindObjectsOfType(GetType()).Length > 1)
         {
             Destroy(gameObject);
@@ -145,11 +150,16 @@ public class GameManagerController : MonoBehaviour {
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
+        video = GameObject.Find("360Video");
+        //ScreenFader f = gameObject.GetComponent<ScreenFader>();
+        //f.TurnFadeOff(true);
         if (sceneName==astralScene)
         {
             RespawnBadges();
             if ( world != null && GameObject.Find(world) != null)
             {
+                //canPlayVid = false;
+                Destroy(video);
                 isReturning = true;
                 ReloadWorld();
 
