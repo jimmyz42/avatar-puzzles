@@ -17,20 +17,24 @@ public class CandleController : MonoBehaviour {
 	private Init_Candles manager;
 	private int row, col;
     private UnityAction red;
+    private UnityAction TurnOff;
 
     void Awake()
     {
         red = new UnityAction(BecomeRed);
+        TurnOff = new UnityAction(Off);
     }
 
     void OnEnable()
     {
         EventManager.StartListening("TurnTheFlamesRed", red);
+        EventManager.StartListening("TurnOffTheCandles", TurnOff);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("TurnTheFlamesRed", red);    
+        EventManager.StopListening("TurnTheFlamesRed", red);
+        EventManager.StopListening("TurnOffTheCandles", TurnOff);
     }
     void Start ()
     {
@@ -79,6 +83,10 @@ public class CandleController : MonoBehaviour {
 		this.col = col;
 	}
 	
+    void Off()
+    {
+        TurnFireOn = false;
+    }
 	// Update is called once per frame
 	void Update ()
     {

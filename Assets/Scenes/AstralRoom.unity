@@ -577,6 +577,7 @@ MonoBehaviour:
   gmc: {fileID: 682946211}
   fade: {fileID: 0}
   roomAudio: {fileID: 1500151559}
+  CanPlay: 0
 --- !u!4 &505525700
 Transform:
   m_ObjectHideFlags: 0
@@ -643,7 +644,7 @@ GameObject:
   - component: {fileID: 682946212}
   - component: {fileID: 682946213}
   - component: {fileID: 682946214}
-  - component: {fileID: 682946215}
+  - component: {fileID: 682946216}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -687,6 +688,7 @@ MonoBehaviour:
   isReturning: 0
   rmc: {fileID: 0}
   delayForGalaxy: 1
+  video: {fileID: 505525698}
 --- !u!114 &682946214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ad8dae0f56eab469ab5394bfdf8094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &682946215
+--- !u!114 &682946216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -706,11 +708,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 682946211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f079147f055f92147894aed48a6e905b, type: 3}
+  m_Script: {fileID: 11500000, guid: b880c9f9b221fc2498b790633fcebe84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutTexture: {fileID: 2800000, guid: bb64576e91f46d2448a4ec3d966b1c5a, type: 3}
-  fadeSpeed: 0.8
+  fadeIn: 1
+  fadeTime: 2
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeMaterial: {fileID: 2100000, guid: e642b458f4453e04ab7e2b711c58db98, type: 2}
 --- !u!1 &713653512
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +742,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1986450586}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &713653514
 CapsuleCollider:
@@ -1747,12 +1751,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9795a2f08cb4b8b478bc012b0b0d9061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoEndtime: 115
-  endVideo: 64
+  videoEndtime: 10
+  endVideo: 5
   v: {fileID: 0}
   gmc: {fileID: 682946211}
   fade: {fileID: 0}
   roomAudio: {fileID: 0}
+  CanPlay: 0
 --- !u!4 &1669511099 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4617024221bbd6e4cb655fc3eec6f649, type: 3}

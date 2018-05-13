@@ -9,14 +9,15 @@ public class VideoScript : MonoBehaviour {
     public float endVideo = 64.0f;
     public VideoPlayer v; 
     public GameObject gmc;
-    public FadeIn fade;
+    public ScreenFader fade;
     public AudioSource roomAudio;
+    public bool CanPlay;
 
     private GameObject videoBubble;
     // Use this for initialization
     private void Awake()
     {
-        fade = gmc.GetComponent<FadeIn>();
+        fade = gmc.GetComponent<ScreenFader>();
         v = gameObject.GetComponent<VideoPlayer>();
         videoBubble = transform.GetChild(0).gameObject;
     }
@@ -26,15 +27,20 @@ public class VideoScript : MonoBehaviour {
         StartCoroutine(IntroChange());
     }
 
+    public void DontPlay()
+    {
+        CanPlay = false;
+    }
     IEnumerator IntroChange()
     {
 
         yield return new WaitForSeconds(videoEndtime);
-        float fadetime = fade.BeginFade(1);
+        float fadetime = fade.fadeTime;
+        fade.TurnFadeOff(false);
         yield return new WaitForSeconds(fadetime);
         yield return new WaitForSeconds(endVideo);
         Destroy(videoBubble);
-        fade.FadeOut();
+        fade.TurnFadeOff(true);
         roomAudio.Play();
         //SceneManager.LoadScene("AstralRoom", LoadSceneMode.Additive);
     }
