@@ -59,6 +59,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 748487d582b00d847bd57517f78d8e8f, type: 2}
   m_StaticBatchInfo:
@@ -144,54 +145,69 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - serializedVersion: 2
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -209,8 +225,28 @@ MonoBehaviour:
   timer: 10
   speed: 200
   audioSource: {fileID: 82995234148840162}
-  slidingSFX: {fileID: 8300000, guid: 2d1fe7ebc03447d498db618ed659241e, type: 3}
-  collisionSFX: {fileID: 8300000, guid: 7c23409c19113884aa1192df66325e27, type: 3}
+  slidingSFXs:
+  - {fileID: 8300000, guid: ddfaf112638c84f49b0683c94385c578, type: 3}
+  - {fileID: 8300000, guid: b7ac2b1faddf000458f7c7af69c9f516, type: 3}
+  - {fileID: 8300000, guid: d437258626b54a044866fa25d3fd3ec0, type: 3}
+  - {fileID: 8300000, guid: a05019d110bdb7743a93f2821da6acbe, type: 3}
+  - {fileID: 8300000, guid: 30404523969272e46a0f5e31a4ddf3bb, type: 3}
+  - {fileID: 8300000, guid: 2bfac9ae160bf9e4ead5e0b2ffcb70b3, type: 3}
+  - {fileID: 8300000, guid: 2745fcd003c09e44789f6fedc026e342, type: 3}
+  - {fileID: 8300000, guid: 45b7197409451a04b899155bcaa4115f, type: 3}
+  - {fileID: 8300000, guid: b6e2fadc7c0de3d44a6cf9c744d5ee28, type: 3}
+  - {fileID: 8300000, guid: dcddcb98eda8bd749902792d11a63b34, type: 3}
+  collisionSFXs:
+  - {fileID: 8300000, guid: 937bf9ae822037d46afe48e8f87529da, type: 3}
+  - {fileID: 8300000, guid: 4fb0d8df7e1ed674c9e5df75320cf690, type: 3}
+  - {fileID: 8300000, guid: 6b5ffd0056fbd1b4c9a7d595dea2ede4, type: 3}
+  - {fileID: 8300000, guid: aeb732d95a7ebad4fb2e2b9e1a071343, type: 3}
+  - {fileID: 8300000, guid: 53c22eb93ae61f540a07b51eb2a13973, type: 3}
+  - {fileID: 8300000, guid: 05d2f3831b5fe4744932a1c78e8199e2, type: 3}
+  - {fileID: 8300000, guid: d09a147e16f634d41aa987605f5ba4d9, type: 3}
+  - {fileID: 8300000, guid: 15604af2d92ec164b9f2d14ce6cf3547, type: 3}
+  - {fileID: 8300000, guid: 43a9fd55004e1d04ead4babe9def321b, type: 3}
+  - {fileID: 8300000, guid: 0bf2f3fe57fae5e4ab7b2313e8424dcb, type: 3}
 --- !u!114 &114572668636773518
 MonoBehaviour:
   m_ObjectHideFlags: 1

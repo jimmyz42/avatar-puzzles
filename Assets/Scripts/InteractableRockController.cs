@@ -22,8 +22,8 @@ public class InteractableRockController : MonoBehaviour {
 
     private bool isMoving = false;
     public AudioSource audioSource;
-    public AudioClip slidingSFX;
-    public AudioClip collisionSFX;
+    public AudioClip[] slidingSFXs;
+    public AudioClip[] collisionSFXs;
 
 	// Use this for initialization
 	void Start ()
@@ -58,12 +58,14 @@ public class InteractableRockController : MonoBehaviour {
 	}
 
     public void playCollisionSfx() {
-        audioSource.clip = collisionSFX;
+        int index = Random.Range(0, collisionSFXs.Length);
+        audioSource.clip = collisionSFXs[index];
         audioSource.Play();
     }
 
     public void playSlidingSfx() {
-        audioSource.clip = slidingSFX;
+        int index = Random.Range(0, slidingSFXs.Length);
+        audioSource.clip = slidingSFXs[index];
         audioSource.Play();
     }
 

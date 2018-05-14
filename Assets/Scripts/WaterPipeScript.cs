@@ -22,6 +22,30 @@ public class WaterPipeScript : MonoBehaviour {
 	private Vector3 velocity = Vector3.zero; // kinematic rigidbodies don't support velocity :(
 	private bool startAnimation = true;
 
+    public AudioSource audioSource;
+    public AudioClip shatterSfx;
+    public AudioClip pipeMoveSfx;
+
+    private void PlayShatterSfx()
+    {
+        audioSource.clip = shatterSfx;
+        audioSource.Play();
+    }
+
+    private void PlayMoveSfx()
+    {
+        audioSource.clip = pipeMoveSfx;
+        int randomStartTime = Random.Range(0, pipeMoveSfx.samples/2); //clip.samples is the lengh of the clip in samples
+        audioSource.timeSamples = randomStartTime;
+        audioSource.Play();
+    }
+
+    private void StopMoveSfx()
+    {
+        audioSource.Stop();
+    }
+
+
     private void Awake()
     {
         //Get all the parts of the pipe
@@ -58,6 +82,7 @@ public class WaterPipeScript : MonoBehaviour {
 			velocity = Vector3.zero;
 			transform.position = oriPos;
 			transform.rotation = oriRot;
+            StopMoveSfx();
 		}
 		//get's current rotation
         pipe_rot = transform.rotation;
@@ -81,12 +106,15 @@ public class WaterPipeScript : MonoBehaviour {
 		if (other.tag == "RockPillar" || other.tag == "GoalHole") {
 			velocity = Vector3.zero;
 			manager.finalizePipe ();
+            StopMoveSfx();
 		}
     }
 
     //Shatter: Causes the pipe to dissolve and return to its Start position
     public void Shatter()
     {
+
+        PlayShatterSfx();
 		
         waterInpipe.SetActive(false);
         waterfall.SetActive(false);
@@ -146,5 +174,6 @@ public class WaterPipeScript : MonoBehaviour {
 
 	public void setVelocity(Vector3 velocity) {
 		this.velocity = velocity;
+        PlayMoveSfx();
 	}
 }

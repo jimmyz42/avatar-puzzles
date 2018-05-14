@@ -15,6 +15,16 @@ public class InteractableMirrorController : MonoBehaviour {
 
 	private Init_Mirrors manager;
 
+    public AudioClip[] windSfxs;
+    public AudioSource audioSource;
+
+    void PlayWindSfx()
+    {
+        int index = Random.Range(0, windSfxs.Length);
+        audioSource.clip = windSfxs[index];
+        audioSource.Play();
+    }
+
 	// Use this for initialization
 	void Start () {
 		dir = Random.Range (0, mirror_dirs);
@@ -86,7 +96,8 @@ public class InteractableMirrorController : MonoBehaviour {
 	public void spinMirror(bool isCCW, int amt = 1) {
 		if (selectedMirror != gameObject)
 			return; // invalid, can only spin self
-		dir = isCCW ? (dir+amt) % mirror_dirs : (dir - (amt % mirror_dirs) + mirror_dirs) % mirror_dirs;
+        PlayWindSfx();
+        dir = isCCW ? (dir+amt) % mirror_dirs : (dir - (amt % mirror_dirs) + mirror_dirs) % mirror_dirs;
 		angleToSpin += isCCW ? amt * 360f / mirror_dirs : -amt * 360f / mirror_dirs;
 		realSpinSpeed = spinSpeed * Mathf.Sqrt (amt);
 		manager.updateLaserPath ();

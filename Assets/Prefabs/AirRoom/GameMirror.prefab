@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114907184691396476}
   - component: {fileID: 65698191052416490}
   - component: {fileID: 54491123650835976}
+  - component: {fileID: 82427973869096326}
   m_Layer: 0
   m_Name: GameMirror
   m_TagString: GameMirror
@@ -188,6 +189,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 1f8454e5b0d84144699971ad31b26750, type: 2}
   m_StaticBatchInfo:
@@ -222,6 +224,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: fb6a947abb0a7c34f9f2a66a8c68d70f, type: 2}
   m_StaticBatchInfo:
@@ -317,6 +320,102 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628551094380062}
   m_Enabled: 1
+--- !u!82 &82427973869096326
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152045688753410}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243846973142222712, guid: a1841a6c29b57ff4291b5a21d3354b86,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.678
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114582949225798842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,6 +441,18 @@ MonoBehaviour:
   dir: 0
   spinSpeed: 1000
   riseSpeed: 5
+  windSfxs:
+  - {fileID: 8300000, guid: deda87843bd98074796cfa3ba25a1b28, type: 3}
+  - {fileID: 8300000, guid: ec3f575ae725cd64382c7d97612ab357, type: 3}
+  - {fileID: 8300000, guid: 70dd5a6d262a50c428e5ba8cca69c1b6, type: 3}
+  - {fileID: 8300000, guid: 312acd616f7c94a4795f8e7f6f8236a4, type: 3}
+  - {fileID: 8300000, guid: e239f1287b8737145b36412eb6305b73, type: 3}
+  - {fileID: 8300000, guid: 0c6eef3248d5c2246a56e8d7967fe05c, type: 3}
+  - {fileID: 8300000, guid: 53eaeb59e3bf98e48baee9544c4d430c, type: 3}
+  - {fileID: 8300000, guid: c6351b722d3064244a69d610c4409362, type: 3}
+  - {fileID: 8300000, guid: b20bdcafc86ed054ab41fd6b4bdfea4c, type: 3}
+  - {fileID: 8300000, guid: 91236fa93bd98274d9ff0b0d6d27500c, type: 3}
+  audioSource: {fileID: 82427973869096326}
 --- !u!124 &124792493608863856
 Behaviour:
   m_ObjectHideFlags: 1

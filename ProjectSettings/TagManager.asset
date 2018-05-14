@@ -30,6 +30,10 @@ TagManager:
   - GoalHole
   - Fire
   - Candle
+  - Movable_Mirror
+  - FireWorld
+  - WaterWorld
+  - AirWorld
   layers:
   - Default
   - TransparentFX

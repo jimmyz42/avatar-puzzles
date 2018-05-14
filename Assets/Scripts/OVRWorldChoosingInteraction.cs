@@ -19,11 +19,11 @@ public class OVRWorldChoosingInteraction : MonoBehaviour {
 
     public void OnSelect( Transform t)
     {
-        if (t.gameObject.tag == "EarthWorld")
+        if (t.gameObject.tag == "EarthWorld"  || t.gameObject.tag == "FireWorld" || t.gameObject.tag == "AirWorld" || t.gameObject.tag == "WaterWorld")
         {
-            Debug.Log("Selected the earth world");
-            RoomWorldController earthWorldController = t.gameObject.GetComponent<RoomWorldController>();
-            earthWorldController.isSelected = true;
+           
+            RoomWorldController worldController = t.gameObject.GetComponent<RoomWorldController>();
+            worldController.isSelected = true;
             //earthWorldController.transitioning = true;
             //StartCoroutine(earthWorldController.EnteringTheWorld());
             playSelectedWorldAudio();

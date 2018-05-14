@@ -19,6 +19,24 @@ public class CandleController : MonoBehaviour {
     private UnityAction red;
     private UnityAction TurnOff;
 
+    public AudioSource audioSource1;
+    public AudioClip[] lightSfxs;
+    public AudioClip[] extinguishSfxs;
+
+    public void lightCandleSfx()
+    {
+        int index = Random.Range(0, lightSfxs.Length);
+        audioSource1.clip = lightSfxs[index];
+        audioSource1.Play();
+    }
+
+    public void extinguishCandleSfx()
+    {
+        int index = Random.Range(0, extinguishSfxs.Length);
+        audioSource1.clip = extinguishSfxs[index];
+        audioSource1.Play();
+    }
+
     void Awake()
     {
         red = new UnityAction(BecomeRed);
@@ -50,6 +68,7 @@ public class CandleController : MonoBehaviour {
 
     {
 
+
         OnMouseDown();
 
     }
@@ -57,7 +76,11 @@ public class CandleController : MonoBehaviour {
     void OnMouseDown() {
         // Select and Unselect are not needed for clicks
         // They only exist because the OVR controller uses thems
-		selectCandle ();
+
+
+
+
+        selectCandle ();
 		toggleCandle ();
 		unselectCandle ();
 	}
@@ -103,6 +126,13 @@ public class CandleController : MonoBehaviour {
     {
 		//fire.SetActive (t);
 		TurnFireOn = t;
+        if (t)
+        {
+            lightCandleSfx();
+        }
+        else {
+            extinguishCandleSfx();
+        }
     }
 
 	public bool isFireOn() {
@@ -111,8 +141,19 @@ public class CandleController : MonoBehaviour {
 	}
 
 	public void toggleFireOn() {
-		//fire.SetActive (!fire.activeSelf);
-		TurnFireOn = !TurnFireOn;
+        //fire.SetActive (!fire.activeSelf);
+
+        if (isFireOn())
+        {
+            lightCandleSfx();
+        }
+        else
+        {
+            extinguishCandleSfx();
+        }
+
+
+        TurnFireOn = !TurnFireOn;
 	}
 
     void BecomeRed()
