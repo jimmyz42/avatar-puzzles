@@ -12,6 +12,8 @@ public class OVRPipeInteraction : MonoBehaviour {
 
     public GameObject waterPipesObj;
 
+    public GameObject exitPortal;
+
     protected bool leftPressed, rightPressed;
     private Init_Pipes pipeManager;
 
@@ -140,6 +142,11 @@ public class OVRPipeInteraction : MonoBehaviour {
                 // DELETE LATER
                 //pipeManager.extendPipe();
             }
+        }
+
+        if (t.gameObject.tag == "ExitPortal")
+        {
+            exitPortal.GetComponent<ExitPortalScript>().leaving = true;
         }
     }
 

@@ -17,6 +17,24 @@ public class OVRWorldChoosingInteraction : MonoBehaviour {
 		
 	}
 
+    public void OnHoverEnter(Transform t)
+    {
+        if (t.gameObject.tag == "EarthWorld" || t.gameObject.tag == "FireWorld" || t.gameObject.tag == "AirWorld" || t.gameObject.tag == "WaterWorld")
+        {
+            PreviewScene previewScene = t.gameObject.GetComponent<PreviewScene>();
+            previewScene.OnMouseEnter();
+        }
+    }
+
+    public void OnHoverExit(Transform t)
+    {
+        if (t.gameObject.tag == "EarthWorld" || t.gameObject.tag == "FireWorld" || t.gameObject.tag == "AirWorld" || t.gameObject.tag == "WaterWorld")
+        {
+            PreviewScene previewScene = t.gameObject.GetComponent<PreviewScene>();
+            previewScene.OnMouseExit();
+        }
+    }
+
     public void OnSelect( Transform t)
     {
         if (t.gameObject.tag == "EarthWorld"  || t.gameObject.tag == "FireWorld" || t.gameObject.tag == "AirWorld" || t.gameObject.tag == "WaterWorld")

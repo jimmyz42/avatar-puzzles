@@ -28,7 +28,7 @@ namespace MirrorInteractionNameSpace
         public Material yellowMat;
         public Material greenMat;
 
-
+        public GameObject exitPortal;
 
         protected int numPressed;
         protected Vector3 leftStartPos;
@@ -95,6 +95,11 @@ namespace MirrorInteractionNameSpace
                     controller = t.gameObject.GetComponent<InteractableMirrorController>();
                     StoreHandPositions();
                 }
+            }
+
+            if (t.gameObject.tag == "ExitPortal")
+            {
+                exitPortal.GetComponent<ExitPortalScript>().leaving = true;
             }
         }
 

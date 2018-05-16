@@ -504,7 +504,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -534,7 +534,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82936226419012526
 AudioSource:
   m_ObjectHideFlags: 1
@@ -543,7 +543,7 @@ AudioSource:
   m_GameObject: {fileID: 1883109017504602}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243041190271666132, guid: 7c69d4b3fd0b12146ac7fba2db62abdf,
+  OutputAudioMixerGroup: {fileID: 243406277672935486, guid: 7c69d4b3fd0b12146ac7fba2db62abdf,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -600,7 +600,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -630,7 +630,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!108 &108130537446840090
 Light:
   m_ObjectHideFlags: 1
@@ -694,7 +694,6 @@ MonoBehaviour:
   TurnFireRed: 0
   riseSpeed: 2
   audioSource1: {fileID: 82936226419012526}
-  audioSource2: {fileID: 82573004052049012}
   lightSfxs:
   - {fileID: 8300000, guid: a0058501edee8584882d2a5d1df6453c, type: 3}
   - {fileID: 8300000, guid: bee85ed8f7a0a9f42bc4f7cb67ec20f5, type: 3}
@@ -717,7 +716,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cf195f25c26178945a21fc61ca7d6141, type: 3}
   - {fileID: 8300000, guid: a4b4e1be7c0b96a4c9d7fd97817e74f5, type: 3}
   - {fileID: 8300000, guid: 75b6af00ce2f38a4b95997500c610d5f, type: 3}
-  litSfx: {fileID: 8300000, guid: b0f7b3fa77f732f4b90959190838d5f5, type: 3}
 --- !u!114 &114554169016186644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,7 +749,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.29
+  m_Radius: 0.4
   m_Height: 2.97
   m_Direction: 1
   m_Center: {x: 0.07, y: 2.21, z: -0.28}

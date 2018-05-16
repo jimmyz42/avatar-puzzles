@@ -34,6 +34,7 @@ TagManager:
   - FireWorld
   - WaterWorld
   - AirWorld
+  - ExitPortal
   layers:
   - Default
   - TransparentFX

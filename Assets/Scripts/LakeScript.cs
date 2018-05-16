@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class LakeScript : MonoBehaviour {
 
     public float speed;
+    public float delay;
     public bool canMoveDown;
     public bool canMove;
     public GameObject Holes;
@@ -84,6 +85,12 @@ public class LakeScript : MonoBehaviour {
 
     void IsMovingDown()
     {
+        StartCoroutine(InitPoolTimer());
+    }
+
+    IEnumerator InitPoolTimer()
+    {
+        yield return new WaitForSeconds(delay);
         canMoveDown = true;
     }
 

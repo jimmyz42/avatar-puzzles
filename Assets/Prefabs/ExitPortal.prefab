@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114542611569349060}
   m_Layer: 0
   m_Name: ExitPortal
-  m_TagString: Untagged
+  m_TagString: ExitPortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +86,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 0353d14ef9a3d1341968b597761f05f0, type: 2}
   m_StaticBatchInfo:

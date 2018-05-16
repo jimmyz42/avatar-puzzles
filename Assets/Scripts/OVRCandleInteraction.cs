@@ -39,6 +39,8 @@ public class OVRCandleInteraction : OVRInteractable
 
     private bool firstPunch = false;
 
+    public GameObject exitPortal;
+
     private void resetCandles()
     {
         candles.GetComponent<Init_Candles>().setCandleConfig(false);
@@ -84,6 +86,11 @@ public class OVRCandleInteraction : OVRInteractable
 
                 if (greenMat != null) { t.gameObject.transform.GetChild(1).gameObject.GetComponent<Renderer>().material = greenMat; }
             }
+        }
+
+        if (t.gameObject.tag == "ExitPortal")
+        {
+            exitPortal.GetComponent<ExitPortalScript>().leaving = true;
         }
     }
 

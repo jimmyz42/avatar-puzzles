@@ -21,6 +21,7 @@ AudioMixerController:
     - ba84a4b1af44a884f8be6173f2cb73b9
     - e367cdabf2e42f84c8ab1b2cdf7a33fe
     - f64800528228bbd4ba75fb32ac970e0f
+    - eba18009d66430a4a85351ac4a42024e
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -35,6 +36,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 243934002864138662}
   - {fileID: 243800261701316642}
+  - {fileID: 243739666677875282}
   m_Volume: 54a80915226460d49b9ba546e723d389
   m_Pitch: 9bd2e216561fff246853170b938fe98d
   m_Effects:
@@ -65,9 +67,29 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 0dd978b34746f804b88a608d8ade44c7
   m_FloatValues:
-    4cd4fd1adc5431543ae4a41a09cb0680: -0.88405144
-    1a53a91c9a64fae4899fba7ffdb1cebe: 17.586802
+    54a80915226460d49b9ba546e723d389: -0.16685224
+    056991e7f91b64f4ebb2f25305f8454c: -1.0800359
+    4cd4fd1adc5431543ae4a41a09cb0680: 7.987113
+    c6a92dab234f4e949a280ef5e2e658c2: 3.2656894
+    1a53a91c9a64fae4899fba7ffdb1cebe: 15.10171
   m_TransitionOverrides: {}
+--- !u!243 &243739666677875282
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Voice Over Water room
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: eba18009d66430a4a85351ac4a42024e
+  m_Children: []
+  m_Volume: 056991e7f91b64f4ebb2f25305f8454c
+  m_Pitch: 3880e8678276f6149a619caa0ae7e853
+  m_Effects:
+  - {fileID: 244899718794097972}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243783129642470224
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -155,6 +177,19 @@ AudioMixerEffectController:
   m_EffectID: ec2807d75834ef949ba93a09afe1f27d
   m_EffectName: Attenuation
   m_MixLevel: efd2549ae4b14f74482b0ba04cbbcbbc
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244899718794097972
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 3568ff63ee85a5845a8a34fe9fd84672
+  m_EffectName: Attenuation
+  m_MixLevel: 9baa2518e444e584fa8d0ef15dab27ec
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0

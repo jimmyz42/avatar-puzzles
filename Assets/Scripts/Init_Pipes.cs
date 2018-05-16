@@ -24,7 +24,9 @@ public class Init_Pipes : MonoBehaviour {
 	private int selectedPipe = -1, selectedHole = -1;
 	private int tentativePipes = 0;
 
-	public bool PlayEndGame;
+	public bool PlayEndGame = true;
+
+    public AudioSource endGameAudioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -201,6 +203,9 @@ public class Init_Pipes : MonoBehaviour {
 	{
         EventManager.TriggerEvent("CompletedWorld");
         EventManager.TriggerEvent("EndLevel");
+
+        endGameAudioSource.Play();
+        
         
     }
 }

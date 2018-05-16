@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1096721252}
-  m_IndirectSpecularColor: {r: 0.031817354, g: 0.03165754, b: 0.03153902, a: 1}
+  m_IndirectSpecularColor: {r: 0.030556457, g: 0.031448934, b: 0.030278256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -461,7 +461,7 @@ Prefab:
     - target: {fileID: 198368696312975484, guid: f376a428abc2e814c8f9c3db16efab87,
         type: 2}
       propertyPath: randomSeed
-      value: -166748897
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198368696312975484, guid: f376a428abc2e814c8f9c3db16efab87,
         type: 2}
@@ -838,7 +838,7 @@ Prefab:
     - target: {fileID: 198368696312975484, guid: f376a428abc2e814c8f9c3db16efab87,
         type: 2}
       propertyPath: randomSeed
-      value: -166748897
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198368696312975484, guid: f376a428abc2e814c8f9c3db16efab87,
         type: 2}
@@ -1517,7 +1517,7 @@ MonoBehaviour:
   onHoverEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1673521824}
         m_MethodName: OnHoverEnter
         m_Mode: 0
         m_Arguments:
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   onHoverExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1673521824}
         m_MethodName: OnHoverExit
         m_Mode: 0
         m_Arguments:
@@ -1749,7 +1749,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1669511094}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 4e4f2899fc0f080429888894965196fa, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: df6d4a15c91b3554c8aec1fffdfdafe3, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1762,12 +1762,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 1500151559}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
@@ -1836,7 +1838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1500151559}
-  selectedWorld: {fileID: 8300000, guid: 5a5133b844bccf3459b4c97da389acb2, type: 3}
+  selectedWorld: {fileID: 8300000, guid: b0d77a2539be6494ba8cb3a8896856fc, type: 3}
 --- !u!1001 &1699287655
 Prefab:
   m_ObjectHideFlags: 0
@@ -1908,7 +1910,7 @@ Prefab:
     - target: {fileID: 198368696312975484, guid: f376a428abc2e814c8f9c3db16efab87,
         type: 2}
       propertyPath: randomSeed
-      value: -166748897
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1103293303748908, guid: f376a428abc2e814c8f9c3db16efab87, type: 2}
       propertyPath: m_TagString

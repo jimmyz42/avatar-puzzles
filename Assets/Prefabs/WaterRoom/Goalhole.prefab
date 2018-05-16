@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 64366185394623584}
   - component: {fileID: 23205621998419542}
   - component: {fileID: 114120210703406660}
+  - component: {fileID: 65289391095497884}
   m_Layer: 8
   m_Name: Goalhole
   m_TagString: GoalHole
@@ -56,6 +57,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d00947c6a5da1f44293b55e633271a44, type: 2}
   m_StaticBatchInfo:
@@ -92,12 +94,24 @@ MeshCollider:
   m_GameObject: {fileID: 1239566929354590}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65289391095497884
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239566929354590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.847427, y: 2.2204466e-16, z: 10.000002}
+  m_Center: {x: -0.25574967, y: 0, z: 0}
 --- !u!114 &114120210703406660
 MonoBehaviour:
   m_ObjectHideFlags: 1

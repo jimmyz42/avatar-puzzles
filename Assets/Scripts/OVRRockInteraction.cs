@@ -12,6 +12,7 @@ namespace RockInteractionNameSpace
 
         protected Material oldHoverMat;
         public Material yellowMat;
+        public GameObject exitPortal;
 
         protected int numPressed;
         protected Vector3 leftStartPos;
@@ -51,9 +52,12 @@ namespace RockInteractionNameSpace
                     //t.gameObject.GetComponent<InteractableRockController>().selectRock();
                     controller = t.gameObject.GetComponent<InteractableRockController>();
                     StoreHandPositions();
-                }
+                }               
+            }
 
-                
+            if (t.gameObject.tag == "ExitPortal")
+            {
+                exitPortal.GetComponent<ExitPortalScript>().leaving = true;
             }
         }
 
