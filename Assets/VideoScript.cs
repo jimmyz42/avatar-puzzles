@@ -20,6 +20,7 @@ public class VideoScript : MonoBehaviour {
         fade = gmc.GetComponent<ScreenFader>();
         v = gameObject.GetComponent<VideoPlayer>();
         videoBubble = transform.GetChild(0).gameObject;
+        roomAudio = GameObject.Find("OSTAudio").GetComponent<AudioSource>();
     }
     void Start()
     {
